@@ -1,0 +1,255 @@
+.churchGal1 {
+  grid-row: 1/3;
+  grid-column: 3/4;
+  object-position: 80% 50%;
+}
+
+.churchGal2 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  object-position: 50% 30%;
+}
+.churchGal3 {
+  grid-column: 1/3;
+  grid-row: 2/3;
+}
+.churchGal4 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  object-position: 50% 10%;
+}
+
+.lowerSection .churchMural {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: auto;
+  margin: auto;
+  padding: auto;
+  overflow: hidden;
+}
+
+.churchMural div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 4rem;
+  margin: auto;
+}
+
+.churchMural div {
+  height: calc(55rem + 1vw);
+  margin: auto;
+}
+
+.churchMural img {
+  border-radius: 3rem;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: rgba(53, 53, 117, 0.5) 15px solid;
+  margin: auto;
+}
+
+.churchMural {
+  text-align: center;
+  font-size: calc(2rem + 1vw);
+}
+
+@media screen and (max-width: 1000px) {
+  .churchMural {
+    flex-wrap: wrap;
+    background: linear-gradient(
+      rgba(3, 84, 142, 0.922),
+      rgba(4, 212, 77, 0.419)
+    );
+    padding-bottom: 10rem;
+  }
+
+  .churchMural h5 {
+    padding: 3rem;
+  }
+}
+
+.churchMural div:hover,
+.churchMural h5:hover {
+  color: rgb(188, 205, 2);
+  border-radius: 10rem;
+  cursor: url("../../../icons/black&colored_cursor.png"), auto;
+  transition: all ease-in-out 1s;
+}
+
+.churchMural div:hover {
+  background-color: #3f6783;
+  border-radius: 40px;
+}
+
+.churchCarousel {
+  margin: auto;
+}
+
+.churchCarousel ul {
+  margin: 0;
+  width: 100%;
+}
+.churchCarousel li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12rem;
+
+  margin: 0mm;
+}
+
+.churchCarousel {
+  animation: churchGlide infinite 12s linear;
+}
+
+@keyframes churchGlide {
+  0% {
+    transform: translate3d(0, 48%, 0);
+  }
+  100% {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .churchCarousel {
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+  .churchMural img {
+    border: none;
+  }
+
+  .churchCarousel {
+    animation: churchGlide infinite 9s linear;
+    height: calc(45rem + 1vh);
+  }
+
+  .main-body {
+    height: auto;
+  }
+
+  @keyframes churchGlide {
+    0% {
+      transform: translate3d(0, 100%, 0);
+    }
+    100% {
+      transform: translate3d(0, -300%, 0);
+    }
+  }
+}
+
+/* Sidescrollers */
+
+.churchSideways {
+  overflow: hidden;
+  height: 5%;
+  position: relative;
+  animation: cSideScroll 38s linear infinite;
+  width: auto;
+}
+
+.churchSideways ul {
+  display: grid;
+  padding: 2rem;
+  margin: 3rem;
+  grid-template-columns: repeat(34, 1fr);
+  max-width: 100%;
+}
+.churchSideways li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  width: 50rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+@keyframes cSideScroll {
+  0% {
+    transform: translate3d(63%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-63%, 0, 0);
+  }
+}
+
+.churchSideways2 ul {
+  display: grid;
+  padding: 2rem;
+  margin: 3rem;
+  grid-template-columns: repeat(34, 1fr);
+  max-width: 100%;
+}
+.churchSideways2 li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  width: 50rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.churchSideways2 {
+  overflow: hidden;
+  height: 5%;
+  position: relative;
+  animation: cSideScroll2 38s infinite linear;
+}
+
+@keyframes cSideScroll2 {
+  0% {
+    transform: translate3d(-63%, 0, 0);
+  }
+  100% {
+    transform: translate3d(63%, 0, 0);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  @keyframes cSideScroll {
+    0% {
+      transform: translate3d(54%, 0, 0);
+    }
+    100% {
+      transform: translate3d(-54%, 0, 0);
+    }
+  }
+  @keyframes cSideScroll2 {
+    0% {
+      transform: translate3d(-54%, 0, 0);
+    }
+    100% {
+      transform: translate3d(54%, 0, 0);
+    }
+  }
+}
+
+@media screen and (max-width: 595px) {
+  .lowerSection {
+    height: auto;
+  }
+  .churchMural div {
+    justify-content: center;
+    padding: 0rem;
+  }
+  .churchMural img {
+    border-radius: 6rem;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 0rem;
+    border: none;
+  }
+  .churchMural div {
+    padding: 1rem;
+  }
+}

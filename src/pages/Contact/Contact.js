@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import emailjs from "emailjs-com";

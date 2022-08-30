@@ -1,13 +1,75 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=DM+Serif+Display&family=Monoton&family=Oswald:wght@300;400&family=Parisienne&family=Righteous&family=Roboto+Condensed:ital,wght@1,300&family=Suranna&display=swap");
+/* GLOBAL STYLES */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  background-image: none;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* global styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+html {
+  font-size: 54.5%;
+}
+
+h1 {
+  font-family: "Parisienne", cursive;
+}
+
+h4 {
+  font-family: "Cinzel Decorative", cursive;
+  text-shadow: 1px 5px 4px rgb(152, 143, 160);
+  font-size: calc(2.7rem + 0.5vw);
+  list-style: none;
+}
+
+p,
+li {
+  font-family: "Cinzel Decorative", cursive;
+  text-shadow: 1px 5px 4px rgb(152, 143, 160);
+  font-size: calc(2.3rem + 0.5vw);
+  list-style: none;
+}
+
+.p,
+.li4 {
+  font-family: "Cinzel Decorative", cursive;
+  color: rgb(14, 77, 171);
+  font-size: calc(3rem + 0.5vw);
+  font-weight: 700;
+  margin: 1rem;
+  text-shadow: 2px 2px 2px rgb(255, 255, 255);
+}
+
+.li1 {
+  color: black;
+}
+
+.li2,
+.li2 li,
+.li3 li {
+  color: white;
+  text-shadow: 4px 3px 4px rgb(53, 4, 102);
+}
+
+.li3 {
+  text-shadow: 2px 2px 7px white;
 }

@@ -1,0 +1,216 @@
+.kDisplay {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.kDisplay .kCarousel {
+  width: 45%;
+  margin: auto;
+}
+
+.kCarousel ul {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.kCarousel li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 11rem;
+  width: 100%;
+  background-image: none;
+}
+
+.kCarousel li:hover {
+  /* transition: background linear 1s; */
+  transition: all linear 0.7s;
+  color: limegreen;
+  background: rgb(35, 98, 119);
+  border-radius: 3rem;
+  cursor: url("../../../../src/icons/black&colored_cursor.png"), auto;
+}
+
+@media screen and (max-width: 1555px) {
+  .kDisplay {
+    justify-content: center;
+    align-items: baseline;
+  }
+}
+
+.kDisplay .kGallery {
+  padding: 5rem;
+  max-width: 50%;
+}
+
+.kDisplay .kGallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6rem;
+  padding: 2rem;
+}
+
+.kDisplay .kGallery h5 {
+  font-size: x-large;
+}
+
+.kSidewaysList {
+  overflow: hidden;
+  height: 5%;
+  position: relative;
+  animation: kSideScroll 20s linear infinite;
+  width: auto;
+}
+
+.kSidewaysList ul {
+  display: grid;
+  padding: 2rem;
+  margin: 3rem;
+  grid-template-columns: repeat(34, 1fr);
+  max-width: 100%;
+}
+.kSidewaysList li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50rem;
+  margin: 0mm;
+}
+
+/* .kDisplay .kGallery div:hover, */
+.kDisplay .kGallery div:hover,
+.kDisplay .kGallery div:hover h5 {
+  background-color: #3f6783;
+  border-radius: 30px;
+  font-size: x-large;
+  padding: 1rem;
+  color: limegreen;
+  transition: all 1s ease-in-out;
+  cursor: url("../../../../src/icons/black&colored_cursor.png"), auto;
+}
+
+.kDisplay .kGallery div:hover {
+  transition: all 1s ease-in-out;
+  border: solid 20px #3f6783;
+  border-radius: 2rem;
+  background-color: #3f6783;
+}
+
+@keyframes kSideScroll {
+  0% {
+    transform: translate3d(66%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-66%, 0, 0);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .kDisplay .kCarousel {
+    height: calc(50rem + 1vw);
+  }
+  .kCarousel ul {
+    animation: kSlide infinite 13s linear 0s;
+  }
+
+  .kCarousel li:hover {
+    transition: none;
+    color: black;
+    background: transparent;
+    border-radius: none;
+    padding: auto;
+    cursor: auto;
+  }
+  .kDisplay {
+    flex-direction: column;
+    max-width: 100%;
+    padding: 0rem;
+    margin: 0rem;
+  }
+
+  .kDisplay .kCarousel {
+    width: 70%;
+  }
+
+  .kDisplay .kGallery {
+    display: flex;
+    flex-direction: row;
+    align-items: space-evenly;
+    justify-content: space-evenly;
+    max-width: 100%;
+    padding: 0.1vw;
+    background: linear-gradient(rgba(92, 92, 191, 0.8), green);
+  }
+  .kDisplay .kGallery div {
+    margin-bottom: 8rem;
+  }
+  .kDisplay .kGallery img {
+    padding: 0.3rem;
+    margin: 0rem;
+    border-radius: 2rem;
+  }
+
+  .kDisplay .kGallery div:hover h5 {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 30px;
+    font-size: x-large;
+    padding: none;
+    color: limegreen;
+    transition: all 1s ease-in-out 0.1s;
+    cursor: url("../../../../src/icons/black&colored_cursor.png"), auto;
+  }
+
+  .kDisplay .kGallery div:hover {
+    transition: all 1s ease-in-out;
+    border-radius: 0rem;
+    background-color: transparent;
+    cursor: url("../../../../src/icons/black&colored_cursor.png"), auto;
+    transition: all 1s ease-in-out;
+    padding-bottom: 10rem;
+    border-radius: 2rem;
+    background-color: #3f6783;
+  }
+
+  @keyframes kSlide {
+    0% {
+      transform: translate3d(0, 40%, 0);
+    }
+    100% {
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+
+  @keyframes kSideScroll {
+    0% {
+      transform: translate3d(53%, 0, 0);
+    }
+    100% {
+      transform: translate3d(-53%, 0, 0);
+    }
+  }
+
+  .kDisplay .kGallery div {
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 725px) {
+  .kDisplay .kGallery {
+    flex-direction: column;
+  }
+  .kDisplay .kGallery div:hover {
+    padding-bottom: calc(10rem * 1.3);
+  }
+}

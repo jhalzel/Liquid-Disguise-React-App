@@ -1,16 +1,17 @@
+// @ts-nocheck
 import React from "react";
 
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 // components
-import SlidingGallery from "../../components/SlidingGallery";
-import Colors from "../../components/Colors";
-import Subheaders from "../../components/Subheaders";
-import Display from "../../components/Display";
-import Closer from "../../components/Closer";
-import MidSection from "../../components/MidSection";
-import Footer from "../../components/Footer";
+import SlidingGallery from "../components/SlidingGallery";
+import Colors from "../components/Colors";
+import Subheaders from "../components/Subheaders";
+import Display from "../components/Display";
+import Closer from "../components/Closer";
+import MidSection from "../components/MidSection";
+import Footer from "../components/Footer";
 
 // gallery
 import g1 from "./images/IMG_2282.jpg";
@@ -42,7 +43,7 @@ import woods from "./images/woods_mural_large.jpg";
 // Mid-Gallery
 import gallery1 from "./images/blue-jay.jpg";
 import gallery2 from "./images/columns.jpg";
-import gallery3 from "./images/black.JPG";
+import gallery3 from "../assets/images/home_imgs/mid-section/black.a9edbad5.JPG";
 import gallery4 from "./images/largeChurch.jpg";
 
 // paintbrush images
@@ -56,6 +57,7 @@ const paintbrushes = [
 ];
 
 export default function Home({
+  importAll,
   setPage,
   setBack,
   handleClick,
@@ -71,43 +73,24 @@ export default function Home({
     setPage("Home-Page");
   }, [location, setBack, setPage]);
 
-  //contact button
-  const contact = (
-    <span
-      style={{
-        color: "blue",
-        cursor: "pointer",
-        textDecoration: "underline",
-      }}
-      onMouseOver={(e) => (e.currentTarget.style.color = "limegreen")}
-      onMouseLeave={(e) => (e.currentTarget.style.color = "blue")}
-      onClick={() => {
-        var cont = document.getElementsByClassName("contact-com-wrapper")[0];
-        var letters = document.getElementsByClassName("contact")[0];
-        if (
-          !cont.classList.contains("contact-com-wrapper2") &&
-          !letters.classList.contains("contact2")
-        ) {
-          cont.classList.add("contact-com-wrapper2");
-          letters.classList.add("contact2");
-        }
-        setTimeout(() => {
-          cont.classList.remove("contact-com-wrapper2");
-          letters.classList.remove("contact2");
-          // console.log("animation done");
-        }, 2000);
-      }}
-    >
-      contact
-    </span>
-  );
-
   const colors = ["", silver, red, green, gold, gray];
 
-  // gallery array
-  const gallery = [g1, g2, g3, g4, g5, g6, g7, g8, g9];
+  // slider gallery array
+  const gallery = importAll(
+    require.context(
+      "../assets/images/home_imgs/slider",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
 
-  const midGallery = [gallery1, gallery2, gallery3, gallery4];
+  const midGallery = importAll(
+    require.context(
+      "../assets/images/home_imgs/mid-section",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
 
   const lin = (
     <Link

@@ -1,0 +1,196 @@
+.contactBody {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), transparent),
+    url("/public/assets/contactBack.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; /* center image */
+  background-position-y: top;
+  color: white;
+  overflow-x: hidden;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10rem;
+  height: auto;
+}
+
+.about p {
+  padding: 3% 7% 3% 7%;
+}
+
+@media screen and (max-width: 880px) {
+  .about {
+    margin: 10rem 0rem 10rem 0rem;
+  }
+}
+
+.contactBottom {
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contactBottom ul {
+  display: grid;
+  padding: 1% 20% 1% 20%;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+@media screen and (max-width: 1180px) {
+  .contactBottom ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contactBottom li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .contactBottom p {
+    margin: 1rem;
+  }
+  .contactBottom ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .contactBottom li {
+    margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 687px) {
+  .contactBottom ul {
+    max-width: 95%;
+    padding: 0.05rem;
+  }
+  .contactBottom ul li {
+    font-size: calc(1rem + 1.6vw);
+  }
+}
+
+.contactBottom ul li:hover {
+  background-color: #3f6783;
+  border-radius: 18px;
+  transition: all ease 1s;
+}
+
+.contactBottom ul li h4:hover {
+  color: rgb(188, 205, 2);
+  border-radius: 10rem;
+  cursor: url("../../../src/icons/black&colored_cursor.png"), auto;
+  transition: color ease-in-out 1s;
+}
+
+#contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(19, 28, 39, 0.7);
+  border-radius: 3rem;
+  width: 60%;
+  position: relative;
+  min-width: 60rem;
+  margin-bottom: 10rem;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  padding: 3rem 6rem 3rem 6rem;
+}
+
+form h2 {
+  font-family: "Cinzel Decorative", "cursive";
+  font-size: calc(2rem + 1vw);
+  text-align: center;
+  padding: 4rem;
+}
+
+@media screen and (max-width: 1190px) {
+  form div {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+form label {
+  font-family: "Cinzel Decorative", "cursive";
+  margin: 0rem 3rem;
+  font-size: calc(2rem + 1vw);
+}
+
+form input,
+form textarea {
+  background: rgba(63, 103, 131, 0.3);
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: calc(2rem + 1vh);
+  color: white;
+  max-width: 99%;
+}
+
+form input:hover,
+form textarea:hover {
+  background: #c6e2f6;
+  color: black;
+}
+
+form button {
+  cursor: url("../../icons/black&colored_cursor.png"), auto;
+  font-family: "Cinzel Decorative", "cursive";
+  font-weight: bolder;
+  width: 100%;
+  padding: 2rem;
+  margin-top: 8rem;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  font-size: calc(3rem + 1vh);
+  background-color: #3f6783;
+  transition: background 0.7s ease-in-out;
+}
+
+/* on mouse-hover  */
+button:hover {
+  background: linear-gradient(
+    30deg,
+    rgba(3, 84, 142, 0.922),
+    rgba(4, 212, 77, 0.419)
+  );
+}
+
+@media screen and (max-width: 520px) {
+  form {
+    width: 100%;
+    min-width: 40rem;
+  }
+
+  form input {
+    padding: calc(1rem + 1vw);
+  }
+  form button {
+    padding: auto;
+  }
+}
