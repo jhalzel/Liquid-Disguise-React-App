@@ -1,0 +1,97 @@
+.livGal1 {
+  grid-column: 8/11;
+  grid-row: 1/3;
+}
+.livGal2 {
+  grid-column: 5/8;
+  grid-row: 1/3;
+}
+.livGal3 {
+  grid-row: 1/3;
+  grid-column: 1/5;
+}
+.livGal4 {
+  grid-column: 1/11;
+  grid-row: 3/7;
+}
+
+.livCarousel,
+.livCarousel2 {
+  width: 45%;
+  margin: auto;
+}
+
+.livCarousel ul,
+.livCarousel2 ul {
+  margin: 0;
+}
+.livCarousel li,
+.livCarousel2 li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12rem;
+  margin: 0mm;
+}
+
+.livCarousel {
+  animation: lScroll infinite 12s linear;
+}
+@keyframes lScroll {
+  0% {
+    transform: translate3d(0, 45%, 0);
+  }
+  100% {
+    transform: translate3d(0, -95%, 0);
+  }
+}
+
+.livCarousel2 {
+  animation: lScroll2 infinite 12s linear;
+}
+
+@keyframes lScroll2 {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 40%, 0);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .livCarousel {
+    animation: lScroll infinite 10s linear;
+  }
+  .livCarousel2 {
+    animation: lScroll2 infinite 10s linear;
+  }
+
+  .bus-main-body .livCarousel {
+    text-overflow: ellipsis;
+    width: 100%;
+    height: calc(45rem + 0.5vh);
+  }
+  .main-body2 .livCarousel2 {
+    text-overflow: ellipsis;
+    width: 100%;
+    height: calc(55rem + 0.5vh);
+  }
+  @keyframes lScroll {
+    0% {
+      transform: translate3d(0, 90%, 0);
+    }
+    100% {
+      transform: translate3d(0, -300%, 0);
+    }
+  }
+
+  @keyframes lScroll2 {
+    0% {
+      transform: translate3d(0, -270%, 0);
+    }
+    100% {
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+}
