@@ -5,49 +5,20 @@ import { useLocation } from "react-router-dom";
 import "./LivingRooms.css";
 
 //components
-import SlidingGallery from "../../../components/SlidingGallery";
-import Colors from "../../../components/Colors";
-import Subheaders from "../../../components/Subheaders";
-import Display from "../../../components/Display";
-import Closer from "../../../components/Closer";
-import Footer from "../../../components/Footer";
+import SlidingGallery from "../../components/SlidingGallery";
+import Colors from "../../components/Colors";
+import Subheaders from "../../components/Subheaders";
+import Display from "../../components/Display";
+import Closer from "../../components/Closer";
+import Footer from "../../components/Footer";
 
-// backgrounds
-import blue from "./icons/bluefa.jpg";
-import red from "./icons/redfa.jpg";
-import green from "./icons/greenfa.jpg";
-import gold from "./icons/goldfa.jpg";
-import gray from "./icons/grayfa.jpg";
-
-// pallets
-import pa from "../../../icons/iconmonstr-paintbrush-7.svg";
-import pa1 from "./icons/blueLiv.png";
-import pa2 from "./icons/redLiv.png";
-import pa3 from "./icons/greenLiv.png";
-import pa4 from "./icons/goldLiv.png";
-import pa5 from "./icons/grayLiv.png";
-
-// images
-import img1 from "./images/art-work.png";
-import img2 from "./images/candles.png";
-import img3 from "./images/chimney.jpg";
-import img4 from "./images/doorFrame.JPG";
-import img5 from "./images/greencase.png";
-import img6 from "./images/lime-green_room.png";
-import img7 from "./images/livingMural1.jpg";
-import img8 from "./images/livingMural2.jpg";
-import img9 from "./images/rhombus.png";
-import img10 from "./images/roomwavey.png";
-import img11 from "./images/shelfthing.png";
-import img12 from "./images/silvdoor.png";
-import img13 from "./images/trippy.png";
-import img14 from "./images/wavey.png";
-import img15 from "./images/workInprogress.JPG";
-import img16 from "./images/liv16.jpg";
-import img17 from "./images/liv17.jpg";
-import img18 from "./images/liv18.jpg";
-
-export default function LivingRooms({ setBack, setPage, handleClick, sub1 }) {
+export default function LivingRooms({
+  importAll,
+  setBack,
+  setPage,
+  handleClick,
+  sub1,
+}) {
   const location = useLocation();
 
   //reset background
@@ -56,23 +27,39 @@ export default function LivingRooms({ setBack, setPage, handleClick, sub1 }) {
     setPage("Living Rooms");
   }, [location, setBack, setPage]);
 
-  const slidingGallery = [
-    img2,
-    img12,
-    img10,
-    img14,
-    img6,
-    img15,
-    img8,
-    img4,
-    img11,
-  ];
+  const slidingGallery = importAll(
+    require.context(
+      "../../assets/images/livRm_imgs/slider",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
 
-  const pallets = [pa, pa1, pa2, pa3, pa4, pa5];
+  const pallets = importAll(
+    require.context(
+      "../../assets/icons/livingRoom_icons",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
+  pallets.push("");
 
-  const colors = ["", blue, red, green, gold, gray];
+  const colors = importAll(
+    require.context(
+      "../../assets/backgrounds/living rooms",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
+  colors.push("");
 
-  const midGallery = [img1, img3, img5, img16];
+  const midGallery = importAll(
+    require.context("../../assets/images/livRm_imgs/gal1")
+  );
+
+  const midGal2 = importAll(
+    require.context("../../assets/images/livRm_imgs/gal2")
+  );
 
   const list = [
     "family rooms",
@@ -105,8 +92,6 @@ export default function LivingRooms({ setBack, setPage, handleClick, sub1 }) {
     "floors",
   ];
 
-  const midGal2 = [img17, img13, img7, img9, img18];
-
   const lLi1 = [
     "ornamental stencilling",
     "paints & stains",
@@ -127,7 +112,7 @@ export default function LivingRooms({ setBack, setPage, handleClick, sub1 }) {
 
   return (
     <>
-      <SlidingGallery gallery={slidingGallery} />
+      <SlidingGallery cName={"livGal"} gallery={slidingGallery} />
       <Colors
         handleClick={handleClick}
         paintbrushes={pallets}
@@ -156,7 +141,10 @@ export default function LivingRooms({ setBack, setPage, handleClick, sub1 }) {
         carouselClass={"livCarousel"}
       />
       {
-        <Subheaders sub2="Liquid Disguise uses the following treatments & more:" />
+        <Subheaders
+          sub1={""}
+          sub2="Liquid Disguise uses the following treatments & more:"
+        />
       }
 
       {/* display */}
@@ -194,7 +182,7 @@ export default function LivingRooms({ setBack, setPage, handleClick, sub1 }) {
           </ul>
         </section>
       }
-      <Closer sub1={sub1} />
+      <Closer sub1={sub1} sub2={""} />
       <Footer />
     </>
   );

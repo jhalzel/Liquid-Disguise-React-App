@@ -1,11 +1,10 @@
 import React from "react";
 
-export default function Colors({ handleClick, paintbrushes, colors, page }) {
+export default function Colors({ handleClick, paintbrushes, colors }) {
   return (
     <>
       <section className="colors">
-        {/* <h2 id="subtitle">Custom Decorative Painting of New England </h2> */}
-        <h2 id="subtitle">{page}</h2>
+        <h2 id="subtitle">Custom Decorative Painting of New England </h2>
         <div className="pallet">
           <ul className="pals">
             <li className="pallet1">

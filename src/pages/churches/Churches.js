@@ -3,51 +3,21 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 // components
-import Subheaders from "../../../components/Subheaders";
-import SlidingGallery from "../../../components/SlidingGallery";
-import Colors from "../../../components/Colors";
-import Footer from "../../../components/Footer";
-import FloatingList from "../../../components/FloatingList";
-import Closer from "../../../components/Closer";
+import Subheaders from "../../components/Subheaders";
+import SlidingGallery from "../../components/SlidingGallery";
+import Colors from "../../components/Colors";
+import Footer from "../../components/Footer";
+import FloatingList from "../../components/FloatingList";
+import Closer from "../../components/Closer";
+import Display from "../../components/Display";
 
-// sliding-Gallery Images
-import sc1 from "./images/schurch1.JPG";
-import sc2 from "./images/sChurch2.JPG";
-import sc3 from "./images/sChurch3.JPG";
-import sc4 from "./images/sChurch4.jpg";
-import sc5 from "./images/sChurch5.jpg";
-import sc6 from "./images/sChurch6.jpg";
-import sc7 from "./images/sChurch7.JPG";
-import sc8 from "./images/sChurch8.jpg";
-import sc9 from "./images/sChurch9.jpg";
-import Display from "../../../components/Display";
-
-// background colors
-import blue from "./icons/bluech.jpg";
-import red from "./icons/redch.jpg";
-import green from "./icons/greench.jpg";
-import gold from "./icons/goldch.jpg";
-import gray from "./icons/graych.jpg";
-
-// pallets
-import pal from "./icons/mainPaintbrush.svg";
-import pal1 from "./icons/bluch.png";
-import pal2 from "./icons/redch.png";
-import pal3 from "./icons/grech.png";
-import pal4 from "./icons/golch.png";
-import pal5 from "./icons/grach.png";
-
-// mid-Gallery
-import chG1 from "./images/blueChrist.jpg";
-import chG2 from "./images/churchDoor.jpg";
-import chG3 from "./images/firstChur.jpg";
-import chG4 from "./images/christ.JPG";
-
-// lower images
-import waterDamage from "./images/waterDamage.png";
-import fixedWaterDamage from "./images/fixedWaterDamage.png";
-
-export default function Churches({ setBack, setPage, handleClick, sub1 }) {
+export default function Churches({
+  importAll,
+  setBack,
+  setPage,
+  handleClick,
+  sub1,
+}) {
   const location = useLocation();
   //reset background
   useEffect(() => {
@@ -55,13 +25,39 @@ export default function Churches({ setBack, setPage, handleClick, sub1 }) {
     setPage("Houses of Worship");
   }, [location, setBack, setPage]);
 
-  const slidingGal = [sc4, sc5, sc3, sc1, sc2, sc6, sc7, sc8, sc9];
+  const slidingGal = importAll(
+    require.context(
+      "../../assets/images/church_imgs/slider",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
 
-  const paintbrushes = [pal, pal1, pal2, pal3, pal4, pal5];
+  const paintbrushes = importAll(
+    require.context(
+      "../../assets/icons/church_icons",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
+  paintbrushes.push("");
 
-  const colors = ["", blue, red, green, gold, gray];
+  const colors = importAll(
+    require.context(
+      "../../assets/backgrounds/commercial",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
+  colors.push("");
 
-  const midGallery = [chG1, chG2, chG3, chG4];
+  const midGallery = importAll(
+    require.context("../../assets/images/church_imgs/mid-gal")
+  );
+
+  const waterDamage = importAll(
+    require.context("../../assets/images/church_imgs/mural")
+  );
 
   const list = [
     "Water, mold, mildew, smoke and fire damaged walls, ceilings and cabinetry repaired",
@@ -144,11 +140,11 @@ export default function Churches({ setBack, setPage, handleClick, sub1 }) {
         <div className="lowerSection">
           <section className="churchMural">
             <div>
-              <img src={waterDamage} alt="image1" />
+              <img src={waterDamage[0]} alt="image1" />
               <h5>{fig1}</h5>
             </div>
             <div>
-              <img src={fixedWaterDamage} alt="image2" />
+              <img src={waterDamage[1]} alt="image2" />
               <h5>{fig2}</h5>
             </div>
           </section>
@@ -157,6 +153,7 @@ export default function Churches({ setBack, setPage, handleClick, sub1 }) {
       {
         <section className="satisfied">
           <Subheaders
+            sub1={""}
             sub2={
               "Some of the churches and synagogues that have utilized Liquid Disguise's expertise include: "
             }

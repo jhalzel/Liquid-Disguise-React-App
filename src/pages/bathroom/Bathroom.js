@@ -5,71 +5,59 @@ import { useLocation } from "react-router-dom";
 import "./Bathrooms.css";
 
 // components
-import SlidingGallery from "../../../components/SlidingGallery";
-import Colors from "../../../components/Colors";
-import Subheaders from "../../../components/Subheaders";
-import FloatingList from "../../../components/FloatingList";
-import Closer from "../../../components/Closer";
-import Footer from "../../../components/Footer";
+import SlidingGallery from "../../components/SlidingGallery";
+import Colors from "../../components/Colors";
+import Subheaders from "../../components/Subheaders";
+import FloatingList from "../../components/FloatingList";
+import Closer from "../../components/Closer";
+import Footer from "../../components/Footer";
 
-// images
-import bath1 from "./images/bath1.png";
-import bath2 from "./images/bath2.JPG";
-import bath3 from "./images/bath3.JPG";
-import bath4 from "./images/bath4.JPG";
-import bath5 from "./images/bath5.JPG";
-import bath6 from "./images/bath6.JPG";
-import bath7 from "./images/bath7.JPG";
-import bath8 from "./images/bath8.JPG";
-import bath10 from "./images/bath10.JPG";
-import bath11 from "./images/bath11.JPG";
-import bath12 from "./images/bath12.png";
-import bath13 from "./images/bath13.jpg";
-import bath14 from "./images/bath14.jpg";
-import bath15 from "./images/bath15.jpg";
-import bath16 from "./images/bath16.png";
-import bath17 from "./images/bath17.png";
+export default function Bedrooms({
+  importAll,
+  setBack,
+  handleClick,
+  setPage,
+  sub1,
+}) {
+  const midGallery = importAll(
+    require.context(
+      "../../assets/images/bath_imgs/midsection",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
 
-// backgrounds
-import blue from "./icons/blueba.jpg";
-import red from "./icons/redba.jpg";
-import green from "./icons/greenba.jpg";
-import gold from "./icons/goldba.jpg";
-import gray from "./icons/grayba.jpg";
+  const backgrounds = importAll(
+    require.context(
+      "../../assets/backgrounds/bathrooms",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
+  backgrounds.push("");
 
-//pallets
-import pa from "../../../icons/iconmonstr-paintbrush-7.svg";
-import pa1 from "./icons/blueBath.png";
-import pa2 from "./icons/redBath.png";
-import pa3 from "./icons/greenBath.png";
-import pa4 from "./icons/goldBath.png";
-import pa5 from "./icons/grayBath.png";
+  const pallets = importAll(
+    require.context(
+      "../../assets/icons/bathroom_icons",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
 
-export default function Bedrooms({ setBack, handleClick, setPage, sub1 }) {
+  const slidingGal = importAll(
+    require.context(
+      "../../assets/images/bath_imgs/slider",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
+
   const location = useLocation();
   //reset background
   useEffect(() => {
     setBack("");
     setPage("Bathrooms");
   }, [location, setBack, setPage]);
-
-  const slidingGal = [
-    bath11,
-    bath4,
-    bath5,
-    bath6,
-    bath1,
-    bath7,
-    bath8,
-    bath12,
-    bath3,
-  ];
-
-  const backgrounds = ["", blue, red, green, gold, gray];
-
-  const pallets = [pa, pa1, pa2, pa3, pa4, pa5];
-
-  const midGallery = [bath2, bath10, bath14, bath13, bath15, bath16, bath17];
 
   const list = [
     <h4>custom decorative painting </h4>,
@@ -80,7 +68,7 @@ export default function Bedrooms({ setBack, handleClick, setPage, sub1 }) {
 
   return (
     <>
-      <SlidingGallery gallery={slidingGal} />
+      <SlidingGallery cName={"bathGal"} gallery={slidingGal} />
       <Colors
         handleClick={handleClick}
         paintbrushes={pallets}
@@ -102,15 +90,25 @@ export default function Bedrooms({ setBack, handleClick, setPage, sub1 }) {
           })}
         </section>
       }
-      <Subheaders sub2="If you have children, it's great for them to be part of the design and color choices ... so that as the room is transformed, they feel pride and ownership of it. " />
-      <Subheaders sub2="Liquid Disguise has even heard from more than one customer that their children took better care of their rooms after a make-over. Call today for a free consultation and estimate. " />
-      <Subheaders sub1="Liquid Disguise can transform with: " />
+      <Subheaders
+        sub1={""}
+        sub2={
+          "If you have children, it's great for them to be part of the design and color choices ... so that as the room is transformed, they feel pride and ownership of it. "
+        }
+      />
+      <Subheaders
+        sub1={""}
+        sub2={
+          "Liquid Disguise has even heard from more than one customer that their children took better care of their rooms after a make-over. Call today for a free consultation and estimate. "
+        }
+      />
+      <Subheaders sub1={"Liquid Disguise can transform with: "} sub2={""} />
       {
         <section className="bathBottom">
           <FloatingList list={list} />
         </section>
       }
-      <Closer sub1={sub1} />
+      <Closer sub1={sub1} sub2={""} />
       <Footer />
     </>
   );

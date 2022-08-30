@@ -5,42 +5,20 @@ import { useLocation } from "react-router-dom";
 import "./Bedroom.css";
 
 // components
-import SlidingGallery from "../../../components/SlidingGallery";
-import Colors from "../../../components/Colors";
-import Subheaders from "../../../components/Subheaders";
-import FloatingList from "../../../components/FloatingList";
-import Closer from "../../../components/Closer";
-import Footer from "../../../components/Footer";
+import SlidingGallery from "../../components/SlidingGallery";
+import Colors from "../../components/Colors";
+import Subheaders from "../../components/Subheaders";
+import FloatingList from "../../components/FloatingList";
+import Closer from "../../components/Closer";
+import Footer from "../../components/Footer";
 
-// images
-import bed1 from "./images/bed1.jpg";
-import bed2 from "./images/bed2.png";
-import bed3 from "./images/bed3.png";
-import bed4 from "./images/bed4.png";
-import bed5 from "./images/bed5.png";
-import bed6 from "./images/bed6.png";
-import bed7 from "./images/bed7.png";
-import bed8 from "./images/bed8.png";
-import bed10 from "./images/bed10.JPG";
-import bed12 from "./images/bed12.png";
-import bed14 from "./images/bed14.jpg";
-
-// backgrounds
-import blue from "./icons/bluebe.jpg";
-import red from "./icons/redbe.jpg";
-import green from "./icons/greenbe.jpg";
-import gold from "./icons/goldbe.jpg";
-import gray from "./icons/graybe.jpg";
-
-//pallets
-import pa from "../../../icons/iconmonstr-paintbrush-7.svg";
-import pa1 from "./icons/bluebed.png";
-import pa2 from "./icons/redbed.png";
-import pa3 from "./icons/greenbed.png";
-import pa4 from "./icons/goldbed.png";
-import pa5 from "./icons/graybed.png";
-
-export default function Bedrooms({ setBack, handleClick, setPage, sub1 }) {
+export default function Bedrooms({
+  importAll,
+  setBack,
+  handleClick,
+  setPage,
+  sub1,
+}) {
   const location = useLocation();
 
   //reset background
@@ -49,13 +27,35 @@ export default function Bedrooms({ setBack, handleClick, setPage, sub1 }) {
     setPage("Bedrooms");
   }, [location, setBack, setPage]);
 
-  const slidingGal = [bed1, bed2, bed3, bed4, bed5, bed6, bed7, bed8, bed10];
+  const slidingGal = importAll(
+    require.context(
+      "../../assets/images/bedr_imgs/slider",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
 
-  const backgrounds = ["", blue, red, green, gold, gray];
+  const backgrounds = importAll(
+    require.context(
+      "../../assets/backgrounds/bedrooms",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
+  backgrounds.push("");
 
-  const pallets = [pa, pa1, pa2, pa3, pa4, pa5];
+  const pallets = importAll(
+    require.context(
+      "../../assets/icons/bedroom_icons",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
+  pallets.push("");
 
-  const midGallery = [bed14, bed12];
+  const midGallery = importAll(
+    require.context("../../assets/images/bedr_imgs/midsection")
+  );
 
   const list = [
     <h4>faux finishes</h4>,
@@ -68,7 +68,7 @@ export default function Bedrooms({ setBack, handleClick, setPage, sub1 }) {
 
   return (
     <>
-      <SlidingGallery gallery={slidingGal} />
+      <SlidingGallery cName={"bedGal"} gallery={slidingGal} />
       <Colors
         handleClick={handleClick}
         paintbrushes={pallets}

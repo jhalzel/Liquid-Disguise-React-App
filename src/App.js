@@ -9,18 +9,18 @@ import ScrollToTop from "./components/ScrollToTop";
 import Modal from "./components/Modal";
 
 //pages
-// import BusinessOffice from "./pages/";
+import BusinessOffice from "./pages/business/Business";
 import Home from "./pages/Home";
 import Contact from "./pages/contact/Contact";
 import Signs from "./pages/signs/Signs";
 import Churches from "./pages/churches/Churches";
 import Exteriors from "./pages/exterior/Exterior";
 import Kitchen from "./pages/kitchen/Kitchen";
-// import LivingRooms from "./pages/";
-// import Bedrooms from "./pages/Residential/Bedrooms/Bedrooms";
-// import Bathrooms from "./pages/Residential/baths/Bathrooms";
-// import Woodwork from "./pages/Residential/woodwork/Woodwork";
-// import About from "./components/About";
+import LivingRooms from "./pages/livingrooms/LivingRoom";
+import Bedrooms from "./pages/bedroom/Bedroom";
+import Bathrooms from "./pages/bathroom/Bathroom";
+import Woodwork from "./pages/woodwork/Woodwork.js";
+import About from "./components/About";
 
 function App() {
   // states
@@ -392,6 +392,7 @@ function App() {
             path="/business"
             element={
               <BusinessOffice
+                importAll={importAll}
                 sub1={sub1}
                 setBack={setBack}
                 setPage={setPage}
@@ -403,6 +404,7 @@ function App() {
             path="churchesAndTemples"
             element={
               <Churches
+                importAll={importAll}
                 sub1={sub1}
                 setBack={setBack}
                 setPage={setPage}
@@ -414,6 +416,7 @@ function App() {
             path="signs"
             element={
               <Signs
+                importAll={importAll}
                 sub1={sub1}
                 setBack={setBack}
                 setPage={setPage}
@@ -425,6 +428,7 @@ function App() {
             path="exteriors"
             element={
               <Exteriors
+                importAll={importAll}
                 sub1={sub1}
                 setBack={setBack}
                 setPage={setPage}
@@ -436,6 +440,7 @@ function App() {
             path="kitchenAndDining"
             element={
               <Kitchen
+                importAll={importAll}
                 sub1={sub1}
                 setBack={setBack}
                 setPage={setPage}
@@ -447,6 +452,7 @@ function App() {
             path="livingRooms"
             element={
               <LivingRooms
+                importAll={importAll}
                 sub1={sub1}
                 setBack={setBack}
                 setPage={setPage}
@@ -458,6 +464,7 @@ function App() {
             path="bedrooms"
             element={
               <Bedrooms
+                importAll={importAll}
                 sub1={sub1}
                 setBack={setBack}
                 setPage={setPage}
@@ -469,6 +476,7 @@ function App() {
             path="bathrooms"
             element={
               <Bathrooms
+                importAll={importAll}
                 sub1={sub1}
                 setBack={setBack}
                 setPage={setPage}
@@ -480,6 +488,7 @@ function App() {
             path="woodwork"
             element={
               <Woodwork
+                importAll={importAll}
                 sub1={sub1}
                 setBack={setBack}
                 setPage={setPage}

@@ -13,49 +13,6 @@ import Closer from "../components/Closer";
 import MidSection from "../components/MidSection";
 import Footer from "../components/Footer";
 
-// gallery
-import g1 from "./images/IMG_2282.jpg";
-import g2 from "./images/IMG_0467.jpg";
-import g3 from "./images/IMG_0052.jpg";
-import g4 from "./images/IMG_1490.jpg";
-import g5 from "./images/IMG_2221.jpg";
-import g6 from "./images/IMG_1705.jpg";
-import g7 from "./images/IMG_0691.jpg";
-import g8 from "./images/IMG_1251.jpg";
-import g9 from "./images/IMG_1746.jpg";
-
-// paintbrushes
-import paintbrush1 from "./icons/iconmonstr-paintbrush-7.svg";
-import paintbrush2 from "./icons/Mask group-2.svg";
-import paintbrush3 from "./icons/iconmonstr-paintbrush-6 2.svg";
-import paintbrush4 from "./icons/Mask group.svg";
-import paintbrush5 from "./icons/iconmonstr-paintbrush-6 4.svg";
-import paintbrush6 from "./icons/Mask group-1.svg";
-
-// images
-import green from "./images/green.jpg";
-import silver from "./images/blue.jpg";
-import red from "./images/red.jpg";
-import gold from "./images/gold.jpg";
-import gray from "./images/Gray.jpg";
-import woods from "./images/woods_mural_large.jpg";
-
-// Mid-Gallery
-import gallery1 from "./images/blue-jay.jpg";
-import gallery2 from "./images/columns.jpg";
-import gallery3 from "../assets/images/home_imgs/mid-section/black.a9edbad5.JPG";
-import gallery4 from "./images/largeChurch.jpg";
-
-// paintbrush images
-const paintbrushes = [
-  paintbrush1,
-  paintbrush2,
-  paintbrush3,
-  paintbrush4,
-  paintbrush5,
-  paintbrush6,
-];
-
 export default function Home({
   importAll,
   setPage,
@@ -64,16 +21,16 @@ export default function Home({
   setLinkClick,
   sub1,
 }) {
-  //set location variable
-  const location = useLocation();
+  // paintbrush images
+  const paintbrushes = importAll(
+    require.context("../assets/icons/home_icons", false, /\.(png|jpe?g|svg)$/)
+  );
+  paintbrushes.push("");
 
-  //reset background on page switch
-  useEffect(() => {
-    setBack("");
-    setPage("Home-Page");
-  }, [location, setBack, setPage]);
-
-  const colors = ["", silver, red, green, gold, gray];
+  const colors = importAll(
+    require.context("../assets/backgrounds/home", false, /\.(png|jpe?g|svg)$/)
+  );
+  colors.push("");
 
   // slider gallery array
   const gallery = importAll(
@@ -92,6 +49,32 @@ export default function Home({
     )
   );
 
+  const midGallery = importAll(
+    require.context(
+      "../assets/images/home_imgs/mid-section",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
+
+  const woods = importAll(
+    require.context(
+      "../assets/images/home_imgs/mural",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
+
+  //set location variable
+  const location = useLocation();
+
+  //reset background on page switch
+  useEffect(() => {
+    setBack("");
+    setPage("Home-Page");
+  }, [location, setBack, setPage]);
+
+  //link for contact animation
   const lin = (
     <Link
       to={"/contact/#about"}

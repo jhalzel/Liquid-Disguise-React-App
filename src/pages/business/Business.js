@@ -2,56 +2,16 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 // components
-import Closer from "../../../components/Closer";
-import Subheaders from "../../../components/Subheaders";
-import SlidingGallery from "../../../components/SlidingGallery";
-import Colors from "../../../components/Colors";
-import Footer from "../../../components/Footer";
-import Display from "../../../components/Display";
-import FloatingList from "../../../components/FloatingList";
-
-// images
-import slidingGallery1 from "./images/IMG_0914.jpg";
-import slidingGallery2 from "./images/IMG_3590.jpg";
-import slidingGallery3 from "./images/IMG_4349.jpg";
-import slidingGallery4 from "./images/IMG_3588.jpg";
-import slidingGallery5 from "./images/IMG_1196.jpg";
-import slidingGallery6 from "./images/cabinet.png";
-import slidingGallery7 from "./images/sisologies.png";
-import slidingGallery8 from "./images/sl1.JPG";
-import slidingGallery9 from "./images/sl2.JPG";
-
-// backgrounds
-import bg1 from "./images/com-blue.jpg";
-import bg2 from "./images/com-red.jpg";
-import bg3 from "./images/com-green.jpg";
-import bg4 from "./images/com-gold.jpg";
-import bg5 from "./images/com-gray.jpg";
-
-//pallets
-import pal1 from "./icons/mainPaintbrush.svg";
-import pal2 from "./icons/com-blue-icon.png";
-import pal3 from "./icons/com-red-icon.png";
-import pal4 from "./icons/com-green-icon.png";
-import pal5 from "./icons/com-gold-icon.png";
-import pal6 from "./icons/com-gray-icon.png";
-
-//mid-gallery
-import build from "./images/build.png";
-import swim2 from "./images/swim2.png";
-import swim3 from "./images/swim3.png";
-import golden from "./images/IMG_2326.jpg";
-import com7 from "./images/bmg7.JPG";
-import com8 from "./images/bmg6.JPG";
-
-//mid-gallery 2
-import midGal1 from "./images/midGal1.JPG";
-import midGal2 from "./images/midGal2.JPG";
-import midGal3 from "./images/midGal3.JPG";
-import midGal4 from "./images/midGal4.JPG";
-import midGal5 from "./images/midGal5.jpg";
+import Closer from "../../components/Closer";
+import Subheaders from "../../components/Subheaders";
+import SlidingGallery from "../../components/SlidingGallery";
+import Colors from "../../components/Colors";
+import Footer from "../../components/Footer";
+import Display from "../../components/Display";
+import FloatingList from "../../components/FloatingList";
 
 export default function Business_Office({
+  importAll,
   setPage,
   setBack,
   handleClick,
@@ -64,25 +24,38 @@ export default function Business_Office({
     setPage("Business & office");
   }, [location, setBack, setPage]);
 
-  const slidingGallery = [
-    slidingGallery6,
-    slidingGallery2,
-    slidingGallery1,
-    slidingGallery7,
-    slidingGallery5,
-    slidingGallery9,
-    slidingGallery8,
-    slidingGallery3,
-    slidingGallery4,
-  ];
+  const slidingGallery = importAll(
+    require.context(
+      "../../assets/images/bus_imgs/slider",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
+  const backgrounds = importAll(
+    require.context(
+      "../../assets/backgrounds/commercial",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
+  backgrounds.push("");
 
-  const backgrounds = ["", bg1, bg2, bg3, bg4, bg5];
+  const pallets = importAll(
+    require.context(
+      "../../assets/icons/bedroom_icons",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
+  pallets.push("");
 
-  const pallets = [pal1, pal2, pal3, pal4, pal5, pal6];
+  const midGallery = importAll(
+    require.context("../../assets/images/bus_imgs/mid-gal1")
+  );
 
-  const midGallery = [build, swim2, swim3, golden, com7, com8];
-
-  const midGallery2 = [midGal1, midGal2, midGal3, midGal4, midGal5];
+  const midGallery2 = importAll(
+    require.context("../../assets/images/bus_imgs/mid-gal2")
+  );
 
   const list = [
     "Reception rooms",
@@ -153,7 +126,7 @@ export default function Business_Office({
 
   return (
     <>
-      <SlidingGallery gallery={slidingGallery} />
+      <SlidingGallery cName={"busGal"} gallery={slidingGallery} />
       {/* color Pallets */}
       <Colors
         handleClick={handleClick}
@@ -181,7 +154,10 @@ export default function Business_Office({
         carouselClass={"busCarousel"}
       />
       {
-        <Subheaders sub2="Liquid Disguise uses the following treatments & more:" />
+        <Subheaders
+          sub1={""}
+          sub2="Liquid Disguise uses the following treatments & more:"
+        />
       }
 
       {/* display */}
@@ -206,6 +182,7 @@ export default function Business_Office({
             sub1={
               "Liquid Disguise's growing list of satisfied Commercial Customers"
             }
+            sub2={""}
           />
           <div className="sidewaysList">
             <FloatingList list={satList} />
