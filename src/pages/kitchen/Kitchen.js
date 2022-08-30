@@ -42,7 +42,6 @@ export default function Kitchen({
       /\.(png|jpe?g|svg)$/
     )
   );
-  pallets.push("");
 
   const backgrounds = importAll(
     require.context(
@@ -51,7 +50,7 @@ export default function Kitchen({
       /\.(png|jpe?g|svg)$/
     )
   );
-  backgrounds.push("");
+  backgrounds.unshift("");
 
   const midGal = importAll(
     require.context("../../assets/images/kitch_imgs/mural")

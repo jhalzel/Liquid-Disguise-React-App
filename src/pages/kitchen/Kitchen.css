@@ -38,7 +38,7 @@
   color: limegreen;
   background: rgb(35, 98, 119);
   border-radius: 3rem;
-  cursor: url("../../../../src/icons/black&colored_cursor.png"), auto;
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
 }
 
 @media screen and (max-width: 1555px) {
@@ -97,7 +97,7 @@
   padding: 1rem;
   color: limegreen;
   transition: all 1s ease-in-out;
-  cursor: url("../../../../src/icons/black&colored_cursor.png"), auto;
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
 }
 
 .kDisplay .kGallery div:hover {
@@ -169,14 +169,14 @@
     padding: none;
     color: limegreen;
     transition: all 1s ease-in-out 0.1s;
-    cursor: url("../../../../src/icons/black&colored_cursor.png"), auto;
+    cursor: url("/public/assets/black&colored_cursor.png"), auto;
   }
 
   .kDisplay .kGallery div:hover {
     transition: all 1s ease-in-out;
     border-radius: 0rem;
     background-color: transparent;
-    cursor: url("../../../../src/icons/black&colored_cursor.png"), auto;
+    cursor: url("/public/assets/black&colored_cursor.png"), auto;
     transition: all 1s ease-in-out;
     padding-bottom: 10rem;
     border-radius: 2rem;

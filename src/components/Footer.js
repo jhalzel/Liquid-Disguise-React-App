@@ -1,9 +1,9 @@
 import React from "react";
 
 // images
-import riskFree from "../icons/risk-free.png";
-import estimate from "../icons/estimate.png";
-import logo from "../images/ldLogo_update.png";
+import riskFree from "../assets/icons/risk-free.434c543f.png";
+import estimate from "../assets/icons/estimate.baa9c099.png";
+import logo from "../assets/icons/ldLogo_update.eb6d8f1a.png";
 
 export default function Footer() {
   return (

@@ -42,7 +42,7 @@ export default function Business_Office({
       /\.(png|jpe?g|svg)$/
     )
   );
-  backgrounds.push("");
+  backgrounds.unshift("");
 
   const pallets = importAll(
     require.context(
@@ -51,7 +51,6 @@ export default function Business_Office({
       /\.(png|jpe?g|svg)$/
     )
   );
-  pallets.push("");
 
   const midGallery = importAll(
     require.context("../../assets/images/wdwrk_imgs/gal1")

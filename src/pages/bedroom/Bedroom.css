@@ -87,7 +87,7 @@
   color: rgb(188, 205, 2);
 
   border-radius: 10rem;
-  cursor: url("../../../icons/black&colored_cursor.png"), auto;
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
   /* font-size: calc(1.5rem + 0.7vw); */
   transition: color ease-in-out 1s;
   /* animation: liAnimation 2s forwards; */

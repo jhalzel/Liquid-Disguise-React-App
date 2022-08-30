@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 // styles
-import "./Bathrooms.css";
+import "./Bathroom.css";
 
 // components
 import SlidingGallery from "../../components/SlidingGallery";
@@ -34,7 +34,7 @@ export default function Bedrooms({
       /\.(png|jpe?g|svg)$/
     )
   );
-  backgrounds.push("");
+  backgrounds.unshift("");
 
   const pallets = importAll(
     require.context(

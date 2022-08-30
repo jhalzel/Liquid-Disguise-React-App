@@ -78,7 +78,7 @@
 .churchMural h5:hover {
   color: rgb(188, 205, 2);
   border-radius: 10rem;
-  cursor: url("../../../icons/black&colored_cursor.png"), auto;
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
   transition: all ease-in-out 1s;
 }
 

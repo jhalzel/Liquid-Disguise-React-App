@@ -29,7 +29,7 @@ export default function Churches({
     require.context(
       "../../assets/images/church_imgs/slider",
       false,
-      /\.(png|jpe?g|svg)$/
+      /\.(png|jpe?g|svg|JPG)$/
     )
   );
 
@@ -40,16 +40,15 @@ export default function Churches({
       /\.(png|jpe?g|svg)$/
     )
   );
-  paintbrushes.push("");
 
   const colors = importAll(
     require.context(
-      "../../assets/backgrounds/commercial",
+      "../../assets/backgrounds/churches",
       false,
       /\.(png|jpe?g|svg)$/
     )
   );
-  colors.push("");
+  colors.unshift("");
 
   const midGallery = importAll(
     require.context("../../assets/images/church_imgs/mid-gal")

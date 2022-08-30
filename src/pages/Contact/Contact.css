@@ -90,7 +90,7 @@
 .contactBottom ul li h4:hover {
   color: rgb(188, 205, 2);
   border-radius: 10rem;
-  cursor: url("../../../src/icons/black&colored_cursor.png"), auto;
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
   transition: color ease-in-out 1s;
 }
 
@@ -159,7 +159,7 @@ form textarea:hover {
 }
 
 form button {
-  cursor: url("../../icons/black&colored_cursor.png"), auto;
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
   font-family: "Cinzel Decorative", "cursive";
   font-weight: bolder;
   width: 100%;

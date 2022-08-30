@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+//styles
+import "./Exterior.css";
+
 //components
 import Colors from "../../components/Colors";
 import SlidingGallery from "../../components/SlidingGallery";
@@ -27,7 +30,7 @@ export default function Exteriors({
     require.context(
       "../../assets/images/ext_imgs/slider",
       false,
-      /\.(png|jpe?g|svg)$/
+      /\.(png|jpe?g|svg|JPG)$/
     )
   );
 
@@ -38,7 +41,7 @@ export default function Exteriors({
       /\.(png|jpe?g|svg)$/
     )
   );
-  backgrounds.push("");
+  backgrounds.unshift("");
 
   const paintbrushes = importAll(
     require.context(
@@ -47,7 +50,6 @@ export default function Exteriors({
       /\.(png|jpe?g|svg)$/
     )
   );
-  paintbrushes.push("");
 
   const midgallery = importAll(
     require.context("../../assets/images/ext_imgs/mid-section")
@@ -77,7 +79,7 @@ export default function Exteriors({
 
   return (
     <>
-      <SlidingGallery cName={"extGal"} gallery={gallery} />
+      <SlidingGallery cName={"slExtGal"} gallery={gallery} />
       <Colors
         handleClick={handleClick}
         paintbrushes={paintbrushes}

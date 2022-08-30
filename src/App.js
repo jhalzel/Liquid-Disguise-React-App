@@ -175,7 +175,9 @@ function App() {
       document.querySelectorAll(".closer .p3 .s2 "),
       document.querySelectorAll(".closer .p3 .s1 "),
     ];
+
     if (darkBackgrounds.includes(back)) {
+      console.log("includes");
       for (let i = 0; i < paras.length; i++) {
         if (paras[i]) {
           // paras[i].forEach((cl) => console.log(cl));
@@ -202,7 +204,7 @@ function App() {
         }
       });
     }
-  }, [back, subtitle]);
+  }, [back, subtitle, darkBackgrounds]);
 
   // changing backgrounds handle
   const handleClick = (e) => {

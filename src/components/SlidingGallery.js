@@ -9,7 +9,6 @@ export default function SlidingGallery({ gallery, cName }) {
       <section className="sliding-gallery">
         <ImageList gallery={gallery} cName={cName} />
       </section>
-      <h4 id="subtitle">Custom Decorative Painting of New England </h4>
     </div>
   );
 }

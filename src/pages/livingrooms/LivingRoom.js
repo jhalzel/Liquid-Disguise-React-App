@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 //styles
-import "./LivingRooms.css";
+import "./LivingRoom.css";
 
 //components
 import SlidingGallery from "../../components/SlidingGallery";
@@ -31,7 +31,7 @@ export default function LivingRooms({
     require.context(
       "../../assets/images/livRm_imgs/slider",
       false,
-      /\.(png|jpe?g|svg)$/
+      /\.(png|jpe?g|svg|JPG)$/
     )
   );
 
@@ -42,7 +42,6 @@ export default function LivingRooms({
       /\.(png|jpe?g|svg)$/
     )
   );
-  pallets.push("");
 
   const colors = importAll(
     require.context(
@@ -51,14 +50,22 @@ export default function LivingRooms({
       /\.(png|jpe?g|svg)$/
     )
   );
-  colors.push("");
+  colors.unshift("");
 
   const midGallery = importAll(
-    require.context("../../assets/images/livRm_imgs/gal1")
+    require.context(
+      "../../assets/images/livRm_imgs/gal1",
+      false,
+      /\.(png|jpe?g|svg|JPG)$/
+    )
   );
 
   const midGal2 = importAll(
-    require.context("../../assets/images/livRm_imgs/gal2")
+    require.context(
+      "../../assets/images/livRm_imgs/gal2",
+      false,
+      /\.(png|jpe?g|svg|JPG)$/
+    )
   );
 
   const list = [
@@ -112,7 +119,7 @@ export default function LivingRooms({
 
   return (
     <>
-      <SlidingGallery cName={"livGal"} gallery={slidingGallery} />
+      <SlidingGallery cName={"slLivGal"} gallery={slidingGallery} />
       <Colors
         handleClick={handleClick}
         paintbrushes={pallets}

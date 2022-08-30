@@ -31,7 +31,7 @@ export default function Signs({
     require.context(
       "../../assets/images/sign_imgs/slider",
       false,
-      /\.(png|jpe?g|svg)$/
+      /\.(png|jpe?g|svg|JPG)$/
     )
   );
 
@@ -42,7 +42,7 @@ export default function Signs({
       /\.(png|jpe?g|svg)$/
     )
   );
-  backgrounds.push("");
+  backgrounds.unshift("");
 
   const paintbrushes = importAll(
     require.context(
@@ -51,7 +51,6 @@ export default function Signs({
       /\.(png|jpe?g|svg)$/
     )
   );
-  paintbrushes.push("");
 
   const midgallery = importAll(
     require.context("../../assets/images/sign_imgs/gallery")

@@ -92,7 +92,7 @@
   border-radius: 50px;
   transition: all 1s linear;
   color: rgb(188, 205, 2);
-  cursor: url("../../../icons/black&colored_cursor.png"), auto;
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
   transition: all linear 0.7s;
 }
 

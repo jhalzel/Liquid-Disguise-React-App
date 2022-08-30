@@ -25,25 +25,16 @@ export default function Home({
   const paintbrushes = importAll(
     require.context("../assets/icons/home_icons", false, /\.(png|jpe?g|svg)$/)
   );
-  paintbrushes.push("");
 
   const colors = importAll(
     require.context("../assets/backgrounds/home", false, /\.(png|jpe?g|svg)$/)
   );
-  colors.push("");
+  colors.unshift("");
 
   // slider gallery array
   const gallery = importAll(
     require.context(
       "../assets/images/home_imgs/slider",
-      false,
-      /\.(png|jpe?g|svg)$/
-    )
-  );
-
-  const midGallery = importAll(
-    require.context(
-      "../assets/images/home_imgs/mid-section",
       false,
       /\.(png|jpe?g|svg)$/
     )

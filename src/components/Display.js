@@ -1,9 +1,9 @@
 import React from "react";
 
 // styles
-import "../pages/Commercial/BusinessAndOffice/BusinessDisplay.css";
-import "../pages/Commercial/ChurchesAndTemples/Churches.css";
-import "../pages/Commercial/Exterior/Exterior.css";
+import "../pages/business/Business.css";
+import "../pages/churches/Churches.css";
+import "../pages/exterior/Exterior.css";
 
 // components
 import MidGallery from "./MidGallery";

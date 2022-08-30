@@ -38,16 +38,15 @@ export default function Business_Office({
       /\.(png|jpe?g|svg)$/
     )
   );
-  backgrounds.push("");
+  backgrounds.unshift("");
 
   const pallets = importAll(
     require.context(
-      "../../assets/icons/bedroom_icons",
+      "../../assets/icons/business_icons",
       false,
       /\.(png|jpe?g|svg)$/
     )
   );
-  pallets.push("");
 
   const midGallery = importAll(
     require.context("../../assets/images/bus_imgs/mid-gal1")
@@ -126,7 +125,7 @@ export default function Business_Office({
 
   return (
     <>
-      <SlidingGallery cName={"busGal"} gallery={slidingGallery} />
+      <SlidingGallery cName={"slBusGal"} gallery={slidingGallery} />
       {/* color Pallets */}
       <Colors
         handleClick={handleClick}

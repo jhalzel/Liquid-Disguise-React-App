@@ -293,7 +293,7 @@ nav li a:hover,
 .pallet img:hover {
   border-radius: 50% 26% 50% 42%;
   background-color: #3f6783;
-  cursor: url("./icons/black&colored_cursor.png"), auto;
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
 }
 
 .pallet img {
@@ -499,7 +499,7 @@ nav li a:hover,
   background-color: #3f6783;
   color: rgb(188, 205, 2);
   border-radius: 4rem;
-  cursor: url("../src/icons/black&colored_cursor.png"), auto;
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
   transition: color ease-in-out 1s;
   transition: all 1s linear;
 }
