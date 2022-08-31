@@ -7,7 +7,7 @@ export default function ScrollToTop({ linkClick, setfalse }) {
   useEffect(() => {
     if (linkClick === true) {
       window.scrollTo({
-        top: 800,
+        top: 990,
         left: 0,
         behavior: "smooth",
       });
