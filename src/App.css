@@ -410,7 +410,7 @@ nav li a:hover,
 
 .mural h5 {
   font-family: "Roboto Condensed", sans-serif;
-  font-size: x-large;
+  font-size: calc(1rem + 1vw);
   padding: 0.5rem;
   border-radius: 0%;
 }
@@ -533,15 +533,21 @@ footer .estimate img {
   footer .risk-free {
     display: none;
   }
+  .bottom ul {
+    padding: 2rem;
+    margin: 1rem;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    max-width: 95vh;
+  }
 }
 
 @media screen and (max-width: 687px) {
   .bottom ul {
-    max-width: 95%;
+    max-width: 95vh;
     padding: 0.05rem;
   }
-  .bottom ul li {
-    font-size: calc(1rem + 1.6vw);
+  .bottom ul li h4 {
+    font-size: calc(2rem + 1vw);
   }
 
   .wrapper {

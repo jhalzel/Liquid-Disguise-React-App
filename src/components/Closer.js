@@ -5,14 +5,16 @@ export default function Closer({ sub1, sub2 }) {
   const location = useLocation;
 
   useEffect(() => {
-    if (location.pathname === "contact")
-      return (
+    // @ts-ignore
+    if (location.pathname === "contact") {
+      return () => {
         <>
           <section className="closer">
             <div className="p3"></div>
           </section>
-        </>
-      );
+        </>;
+      };
+    }
   }, [location]);
 
   return (

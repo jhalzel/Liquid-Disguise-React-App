@@ -59,7 +59,7 @@
   /* margin: auto; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   width: calc(86rem + 1.8vw);
   height: calc(70rem + 1vh);
   padding: 4rem;
@@ -96,14 +96,16 @@
 }
 
 .leftExtMural:hover div,
-.rightExtMural:hover div,
-.extMural:hover figcaption {
-  transition: all 1s linear;
-  background-color: #3f6783;
+.rightExtMural:hover div {
+  transition: all 1s ease-in-out;
   border-radius: 30px;
   padding: 1rem;
   margin: 1rem;
 }
+/* .extMural:hover figcaption {
+  transition: all 1s ease-in-out;
+  background: #3f6783;
+} */
 
 .extBottom .lowerExt {
   background: linear-gradient(rgba(3, 84, 142, 0.922), rgba(4, 212, 77, 0.419));
@@ -114,6 +116,43 @@
   justify-content: space-around;
   padding-bottom: calc(15rem + 1vh);
   height: 100%;
+}
+
+.leftExtMural:hover div,
+.rightExtMural:hover div,
+.extWrapper:hover {
+  color: rgb(188, 205, 2);
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
+  transition: background 1s ease-in-out;
+  background: #3f6783;
+}
+
+.extCarousel {
+  margin: auto;
+}
+
+.extCarousel ul {
+  margin: 0;
+}
+.extCarousel li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15rem;
+  margin: 0mm;
+}
+
+.extCarousel {
+  animation: extGlide infinite 20s linear;
+}
+
+@keyframes extGlide {
+  0% {
+    transform: translate3d(0, 60%, 0);
+  }
+  100% {
+    transform: translate3d(0, -100%, 0);
+  }
 }
 
 @media screen and (max-width: 497px) {
@@ -131,7 +170,7 @@
     height: auto;
   }
   .ext-main-body .extCarousel {
-    animation: extGlide infinite 10s linear;
+    animation: extGlide infinite 16s linear;
     height: calc(50rem + 1vh);
   }
   .ext-main-body .gallery {
@@ -161,18 +200,18 @@
       transform: translate3d(0, 100%, 0);
     }
     100% {
-      transform: translate3d(0, -180%, 0);
+      transform: translate3d(0, -230%, 0);
     }
   }
 }
 
 @media screen and (max-width: 780px) {
-  .extWrapper {
-    width: 100%;
-  }
 }
 
 @media screen and (max-width: 980px) {
+  .extWrapper {
+    width: 100%;
+  }
   .lowerExt .leftExtMural,
   .lowerExt .rightExtMural {
     border: none;
@@ -188,42 +227,5 @@
   .extBottom .extWrapper {
     display: flex;
     justify-content: flex-start;
-  }
-}
-
-.leftExtMural:hover,
-.rightExtMural:hover,
-.extMural:hover,
-.extMural figcaption:hover p {
-  color: rgb(188, 205, 2);
-  cursor: url("/public/assets/black&colored_cursor.png"), auto;
-  transition: color ease-in-out 1s;
-}
-
-.extCarousel {
-  margin: auto;
-}
-
-.extCarousel ul {
-  margin: 0;
-}
-.extCarousel li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 12rem;
-  margin: 0mm;
-}
-
-.extCarousel {
-  animation: extGlide infinite 12s linear;
-}
-
-@keyframes extGlide {
-  0% {
-    transform: translate3d(0, 68%, 0);
-  }
-  100% {
-    transform: translate3d(0, -100%, 0);
   }
 }

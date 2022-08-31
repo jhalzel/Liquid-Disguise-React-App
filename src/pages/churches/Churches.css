@@ -59,21 +59,6 @@
   font-size: calc(2rem + 1vw);
 }
 
-@media screen and (max-width: 1000px) {
-  .churchMural {
-    flex-wrap: wrap;
-    background: linear-gradient(
-      rgba(3, 84, 142, 0.922),
-      rgba(4, 212, 77, 0.419)
-    );
-    padding-bottom: 10rem;
-  }
-
-  .churchMural h5 {
-    padding: 3rem;
-  }
-}
-
 .churchMural div:hover,
 .churchMural h5:hover {
   color: rgb(188, 205, 2);
@@ -105,7 +90,7 @@
 }
 
 .churchCarousel {
-  animation: churchGlide infinite 12s linear;
+  animation: churchGlide infinite 27s linear;
 }
 
 @keyframes churchGlide {
@@ -117,41 +102,13 @@
   }
 }
 
-@media screen and (max-width: 750px) {
-  .churchCarousel {
-    text-overflow: ellipsis;
-    width: 100%;
-  }
-  .churchMural img {
-    border: none;
-  }
-
-  .churchCarousel {
-    animation: churchGlide infinite 9s linear;
-    height: calc(45rem + 1vh);
-  }
-
-  .main-body {
-    height: auto;
-  }
-
-  @keyframes churchGlide {
-    0% {
-      transform: translate3d(0, 100%, 0);
-    }
-    100% {
-      transform: translate3d(0, -300%, 0);
-    }
-  }
-}
-
 /* Sidescrollers */
 
 .churchSideways {
   overflow: hidden;
   height: 5%;
   position: relative;
-  animation: cSideScroll 38s linear infinite;
+  animation: cSideScroll 65s linear infinite;
   width: auto;
 }
 
@@ -202,7 +159,7 @@
   overflow: hidden;
   height: 5%;
   position: relative;
-  animation: cSideScroll2 38s infinite linear;
+  animation: cSideScroll2 65s infinite linear;
 }
 
 @keyframes cSideScroll2 {
@@ -211,25 +168,6 @@
   }
   100% {
     transform: translate3d(63%, 0, 0);
-  }
-}
-
-@media screen and (max-width: 750px) {
-  @keyframes cSideScroll {
-    0% {
-      transform: translate3d(54%, 0, 0);
-    }
-    100% {
-      transform: translate3d(-54%, 0, 0);
-    }
-  }
-  @keyframes cSideScroll2 {
-    0% {
-      transform: translate3d(-54%, 0, 0);
-    }
-    100% {
-      transform: translate3d(54%, 0, 0);
-    }
   }
 }
 
@@ -251,5 +189,65 @@
   }
   .churchMural div {
     padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .churchCarousel {
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+  .churchMural img {
+    border: none;
+  }
+
+  .churchCarousel {
+    animation: churchGlide infinite 19s linear;
+    height: calc(45rem + 1vh);
+  }
+
+  .main-body {
+    height: auto;
+  }
+
+  @keyframes churchGlide {
+    0% {
+      transform: translate3d(0, 100%, 0);
+    }
+    100% {
+      transform: translate3d(0, -350%, 0);
+    }
+  }
+
+  @keyframes cSideScroll {
+    0% {
+      transform: translate3d(54%, 0, 0);
+    }
+    100% {
+      transform: translate3d(-54%, 0, 0);
+    }
+  }
+  @keyframes cSideScroll2 {
+    0% {
+      transform: translate3d(-54%, 0, 0);
+    }
+    100% {
+      transform: translate3d(54%, 0, 0);
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .churchMural {
+    flex-wrap: wrap;
+    background: linear-gradient(
+      rgba(3, 84, 142, 0.922),
+      rgba(4, 212, 77, 0.419)
+    );
+    padding-bottom: 10rem;
+  }
+
+  .churchMural h5 {
+    padding: 3rem;
   }
 }

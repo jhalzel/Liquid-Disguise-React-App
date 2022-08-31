@@ -59,7 +59,8 @@ export default function Churches({
   );
 
   const list = [
-    "Water, mold, mildew, smoke and fire damaged walls, ceilings and cabinetry repaired",
+    "Water, mold, mildew, smoke and fire damaged walls",
+    "Ceilings and cabinetry repaired",
     "Icons painted and refurbished",
     "Guilding",
     "Liturgical artwork and murals",

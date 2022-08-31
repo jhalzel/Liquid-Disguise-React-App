@@ -57,12 +57,12 @@ export default function Signs({
   );
 
   const list = [
-    <h4>"Wall graphix"</h4>,
-    <h4> "Logos, banners"</h4>,
-    <h4>"Company emblems"</h4>,
-    <h4>"Custom Murals"</h4>,
-    <h4> "Giant letters, numbers"</h4>,
-    <h4>"Interior / exteriors of your building(s) "</h4>,
+    <h4>Wall graphix</h4>,
+    <h4>Logos, banner</h4>,
+    <h4>Company emblems</h4>,
+    <h4>Custom Murals</h4>,
+    <h4>Giant letters, numbers</h4>,
+    <h4>Interior & exteriors </h4>,
   ];
 
   return (

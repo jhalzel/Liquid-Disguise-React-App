@@ -72,12 +72,12 @@
 }
 
 .busCarousel {
-  animation: bScroll infinite 13s linear;
+  animation: bScroll infinite 15s linear;
 }
 
 @keyframes bScroll {
   0% {
-    transform: translate3d(0, 65%, 0);
+    transform: translate3d(0, 70%, 0);
   }
   100% {
     transform: translate3d(0, -100%, 0);
@@ -85,7 +85,7 @@
 }
 
 .busCarousel2 {
-  animation: bScroll2 infinite 13s linear;
+  animation: bScroll2 infinite 18s linear;
 }
 
 @keyframes bScroll2 {
@@ -93,7 +93,7 @@
     transform: translate3d(0, -100%, 0);
   }
   100% {
-    transform: translate3d(0, 55%, 0);
+    transform: translate3d(0, 60%, 0);
   }
 }
 
@@ -171,7 +171,7 @@
   overflow: hidden;
   height: 5%;
   position: relative;
-  animation: sideScroll 38s linear infinite;
+  animation: sideScroll 58s linear infinite;
   width: auto;
 }
 
@@ -222,7 +222,7 @@
   overflow: hidden;
   height: 5%;
   position: relative;
-  animation: sideScroll2 38s infinite linear;
+  animation: sideScroll2 58s infinite linear;
 }
 
 @keyframes sideScroll2 {
@@ -253,10 +253,10 @@
   }
 
   .busCarousel {
-    animation: bScroll infinite 10s linear;
+    animation: bScroll infinite 17s linear;
   }
   .busCarousel2 {
-    animation: bScroll2 infinite 10s linear;
+    animation: bScroll2 infinite 21s linear;
   }
 
   .bus-main-body {
