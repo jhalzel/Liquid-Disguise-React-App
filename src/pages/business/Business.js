@@ -28,7 +28,7 @@ export default function Business_Office({
     require.context(
       "../../assets/images/bus_imgs/slider",
       false,
-      /\.(png|jpe?g|svg)$/
+      /\.(png|jpe?g|svg|JPG)$/
     )
   );
   const backgrounds = importAll(

@@ -19,11 +19,19 @@ export default function Bedrooms({
   setPage,
   sub1,
 }) {
+  const slidingGal = importAll(
+    require.context(
+      "../../assets/images/bath_imgs/slider",
+      false,
+      /\.(png|jpe?g|svg|JPG)$/
+    )
+  );
+
   const midGallery = importAll(
     require.context(
       "../../assets/images/bath_imgs/midsection",
       false,
-      /\.(png|jpe?g|svg)$/
+      /\.(png|jpe?g|svg|JPG)$/
     )
   );
 
@@ -39,14 +47,6 @@ export default function Bedrooms({
   const pallets = importAll(
     require.context(
       "../../assets/icons/bathroom_icons",
-      false,
-      /\.(png|jpe?g|svg)$/
-    )
-  );
-
-  const slidingGal = importAll(
-    require.context(
-      "../../assets/images/bath_imgs/slider",
       false,
       /\.(png|jpe?g|svg)$/
     )

@@ -31,7 +31,7 @@ export default function Bedrooms({
     require.context(
       "../../assets/images/bedr_imgs/slider",
       false,
-      /\.(png|jpe?g|svg)$/
+      /\.(png|jpe?g|svg|JPG)$/
     )
   );
 
@@ -53,7 +53,11 @@ export default function Bedrooms({
   );
 
   const midGallery = importAll(
-    require.context("../../assets/images/bedr_imgs/midsection")
+    require.context(
+      "../../assets/images/bedr_imgs/mural",
+      false,
+      /\.(png|jpe?g|svg|JPG)$/
+    )
   );
 
   const list = [
@@ -89,15 +93,21 @@ export default function Bedrooms({
           })}
         </section>
       }
-      <Subheaders sub2="If you have children, it's great for them to be part of the design and color choices ... so that as the room is transformed, they feel pride and ownership of it. " />
-      <Subheaders sub2="Liquid Disguise has even heard from more than one customer that their children took better care of their rooms after a make-over. Call today for a free consultation and estimate. " />
-      <Subheaders sub1="Liquid Disguise can transform with: " />
+      <Subheaders
+        sub1={""}
+        sub2="If you have children, it's great for them to be part of the design and color choices ... so that as the room is transformed, they feel pride and ownership of it. "
+      />
+      <Subheaders
+        sub1={""}
+        sub2="Liquid Disguise has even heard from more than one customer that their children took better care of their rooms after a make-over. Call today for a free consultation and estimate. "
+      />
+      <Subheaders sub1="Liquid Disguise can transform with: " sub2={""} />
       {
         <section className="bedBottom">
           <FloatingList list={list} />
         </section>
       }
-      <Closer sub1={sub1} />
+      <Closer sub1={sub1} sub2={""} />
       <Footer />
     </>
   );
