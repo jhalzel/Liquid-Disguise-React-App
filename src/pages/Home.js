@@ -100,13 +100,16 @@ export default function Home({
 
   return (
     <>
-      <SlidingGallery gallery={gallery} cName={"home-slider"} />
+      {<SlidingGallery gallery={gallery} cName={"home-slider"} />}
+
       {/* color Pallets */}
-      <Colors
-        handleClick={handleClick}
-        colors={colors}
-        paintbrushes={paintbrushes}
-      />
+      {
+        <Colors
+          handleClick={handleClick}
+          colors={colors}
+          paintbrushes={paintbrushes}
+        />
+      }
       {/* subheaders */}
       <Subheaders
         sub1="Thank you for visiting New England's choice for custom interior and
