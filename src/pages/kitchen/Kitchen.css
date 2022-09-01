@@ -69,7 +69,7 @@
   overflow: hidden;
   height: 5%;
   position: relative;
-  animation: kSideScroll 20s linear infinite;
+  animation: kSideScroll 38s linear infinite;
   width: auto;
 }
 
@@ -121,7 +121,7 @@
     height: calc(50rem + 1vw);
   }
   .kCarousel ul {
-    animation: kSlide infinite 13s linear 0s;
+    animation: kSlide infinite 20s linear 0s;
   }
 
   .kCarousel li:hover {
@@ -194,7 +194,7 @@
 
   @keyframes kSideScroll {
     0% {
-      transform: translate3d(53%, 0, 0);
+      transform: translate3d(49%, 0, 0);
     }
     100% {
       transform: translate3d(-53%, 0, 0);

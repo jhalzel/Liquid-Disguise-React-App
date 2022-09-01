@@ -48,6 +48,8 @@ export default function Home({
     )
   );
 
+  console.log("midGallery:", midGallery);
+
   const woods = importAll(
     require.context(
       "../assets/images/home_imgs/mural",

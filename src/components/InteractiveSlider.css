@@ -1,0 +1,71 @@
+.slider {
+  position: relative;
+  width: 70%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  border-radius: 40px;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: -7rem;
+  font-size: 5rem;
+  color: rgb(53, 53, 117);
+
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
+  user-select: none;
+}
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: -7rem;
+  font-size: 5rem;
+  color: rgb(53, 53, 117);
+
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
+  user-select: none;
+}
+
+.slide {
+  height: 100%;
+  opacity: 0.5;
+  transition-duration: 1s ease-in-out;
+}
+
+.slide.active1 {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  transition-duration: 01s;
+  animation: slide 0.3s ease-in;
+}
+.slide.active2 {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  transition-duration: 01s;
+  animation: slide2 0.3s ease-in;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(-110%, 2px, -10px);
+  }
+  100% {
+    transform: translate3d(0);
+  }
+}
+@keyframes slide2 {
+  0% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}

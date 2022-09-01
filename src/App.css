@@ -264,7 +264,9 @@ nav li a:hover,
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: auto;
   margin: auto;
+  padding: 4rem 3rem;
 }
 
 .main-body {
