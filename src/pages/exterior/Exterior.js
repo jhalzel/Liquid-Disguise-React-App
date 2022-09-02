@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 //styles
@@ -22,9 +22,6 @@ export default function Exteriors({
   handleClick,
   sub1,
 }) {
-  //states
-  const [img, setImg] = useState(false);
-
   const location = useLocation();
   //reset background
   useEffect(() => {
@@ -79,6 +76,18 @@ export default function Exteriors({
   const p1 =
     " Expect the same meticulous care and detailed craftsmanship for which Liquid Disguise's interior work is known, when contracting us for your residential or commercial exterior project. ";
 
+  const desc1 = [
+    "A private home that suffered water and weather damage",
+    "After repairs by Liquid Disguise",
+    "A private home that suffered water and weather damage",
+    "After repairs by Liquid Disguise",
+  ];
+
+  const desc2 = [
+    "Home clearly needs help with it's shingles",
+    "Paint stripping and shingle replacement in a residential repair.",
+  ];
+
   return (
     <>
       <SlidingGallery cName={"slExtGal"} gallery={gallery} />
@@ -89,16 +98,16 @@ export default function Exteriors({
       />
       {/* subheaders */}
       <Subheaders
-        sub1="Enjoy a beautiful exterior to your home or commercial property with painting by Liquid Disguise"
+        sub1='Enjoy a beautiful exterior to your home or commercial property with painting by Liquid Disguise'
         sub2={""}
       />
       <Subheaders
         sub1={""}
-        sub2="In 2006, after more than 20 years of interior painting, Liquid Disguise was contracted by an international painting company to manage two exterior painting crews."
+        sub2='In 2006, after more than 20 years of interior painting, Liquid Disguise was contracted by an international painting company to manage two exterior painting crews.'
       />
       <Subheaders
         sub1={""}
-        sub2="This annual contract was a quick and thorough immersion in exterior painting as we were sudddenly responsible for completing an average of 20 private and commercial properties each summer throughout New England. "
+        sub2='This annual contract was a quick and thorough immersion in exterior painting as we were sudddenly responsible for completing an average of 20 private and commercial properties each summer throughout New England. '
       />
       <Subheaders
         sub1={""}
@@ -125,13 +134,13 @@ export default function Exteriors({
       />
       {/* middle-section */}
       {
-        <section className="extBottom">
-          <p className="p2">{p1}</p>
+        <section className='extBottom'>
+          <p className='p2'>{p1}</p>
 
-          <div className="extWrapper">
-            <div className="extMural">
+          <div className='extWrapper'>
+            <div className='extMural'>
               <figure>
-                <img src={bean} alt="image1" />
+                <img src={bean} alt='image1' />
                 <figcaption>
                   The Bean Counter, Shrewsbury: a rehabilitated structure with a
                   colorful painting treatment by Liquid Disguise.
@@ -142,26 +151,16 @@ export default function Exteriors({
         </section>
       }
       {
-        <section className="extBottom2">
-          <p className="p2">{p1}</p>
-          <div className="slideWrapper">
-            <div className="slideContainer">
+        <section className='extBottom2'>
+          <p className='p2'>{p1}</p>
+          <div className='slideWrapper'>
+            <div className='slideContainer'>
               {" "}
-              {<InteractiveSlider slides={SliderData1} />}
-              <div className="muralDesc">
-                During repairs and after (top and bottom, respectively) of a
-                private home that suffered water and weather damage. Liquid
-                Disguise craftsmen's repair is invisible.
-              </div>
+              {<InteractiveSlider slides={SliderData1} caption={desc1} />}
             </div>
-            <div className="slideContainer">
+            <div className='slideContainer'>
               {" "}
-              {<InteractiveSlider slides={SliderData2} />}
-              <div className="muralDesc">
-                During repairs and after (top and bottom, respectively) of a
-                private home that suffered water and weather damage. Liquid
-                Disguise craftsmen's repair is invisible.
-              </div>
+              {<InteractiveSlider slides={SliderData2} caption={desc2} />}
             </div>
           </div>
         </section>

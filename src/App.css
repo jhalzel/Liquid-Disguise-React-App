@@ -2,7 +2,7 @@
   background: linear-gradient(rgb(92, 92, 191), green);
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 11;
 }
 
 #logo {
@@ -15,7 +15,6 @@
   color: limegreen;
   text-shadow: 0.5px 0.5px 1px rgb(92, 92, 191);
   font-family: "Parisienne", cursive;
-
   padding: 1.5rem;
 }
 #logo h5 {
@@ -123,6 +122,7 @@ nav li a:hover,
 .commercial:hover,
 .residential:hover,
 .contact:hover {
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
   animation: hoverAnimation 0.3s ease forwards 0.18s;
 }
 
@@ -168,7 +168,78 @@ nav li a:hover,
   }
 }
 
+/* home interactive slider */
+.interactive {
+  background: linear-gradient(rgba(92, 92, 191, 0.3), green);
+  height: 76vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.interactive figure {
+  height: 100%;
+}
+
+.interactive figure figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: calc(01rem + 0.7vw);
+}
+.interactive figure:hover {
+  border-radius: 30px;
+  background-color: #3f6783;
+  color: limegreen;
+  padding: 0.6rem 1rem;
+  font-size: calc(1rem + 0.7vw);
+  transition: all 0.4s ease;
+}
+
+.interactive .slideContainer {
+  height: 100%;
+  width: clamp(40rem, 100vw, 65rem);
+}
+
+.interactive .slideContainer figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* sliding-gallery display */
+.navRight {
+  opacity: 0.8;
+  position: absolute;
+  right: 0.1vw;
+  top: 45rem;
+  font-size: 10rem;
+  color: rgb(53, 53, 117);
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
+  user-select: none;
+  z-index: 5;
+}
+
+.navLeft {
+  opacity: 0.8;
+  position: absolute;
+  top: 45rem;
+  left: -1rem;
+  font-size: 10rem;
+  color: rgb(53, 53, 117);
+  cursor: url("/public/assets/black&colored_cursor.png"), auto;
+  user-select: none;
+  z-index: 3;
+}
+
+.navRight:hover path,
+.navLeft:hover path {
+  color: limegreen;
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
+}
 
 .sliding-gallery {
   height: 63vh;
@@ -221,6 +292,37 @@ nav li a:hover,
   padding: 2rem;
 }
 
+.note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 120%;
+  height: 0%;
+}
+.note p {
+  color: limegreen;
+  font-size: calc(2rem + 0.5vh);
+  font-weight: 900;
+  text-shadow: 1px 1px 2px #3f6783;
+}
+
+.arrow {
+  font-size: calc(5rem);
+  transition: all 3s;
+  animation: spin 1s infinite;
+}
+
+@keyframes twister {
+  0% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
 .pallet {
   display: flex;
   flex-direction: row;
@@ -234,6 +336,7 @@ nav li a:hover,
 }
 
 .pallet li {
+  display: flex;
   align-items: center;
 }
 
@@ -250,7 +353,6 @@ nav li a:hover,
   margin: auto;
   padding: 0.7rem;
   object-fit: contain;
-  cursor: pointer;
 }
 
 .invert img {
@@ -308,7 +410,7 @@ nav li a:hover,
 
 .main-body .gallery {
   height: 100%;
-  max-width: 55%;
+  max-width: 65%;
   margin: auto;
   display: inline-grid;
   grid-template-columns: repeat(auto-fit, 1fr);
@@ -324,9 +426,8 @@ nav li a:hover,
 }
 
 .homeGal1 {
-  grid-column: 1/2;
-  grid-row: 2/3;
-  object-position: center;
+  grid-column: 1/4;
+  object-position: 40% 60%;
 }
 .homeGal2 {
   grid-column: 2/4;
@@ -335,8 +436,9 @@ nav li a:hover,
 }
 
 .homeGal3 {
-  grid-column: 1/4;
-  object-position: 40% 60%;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  object-position: center;
 }
 
 .homeGal4 {
@@ -371,6 +473,9 @@ nav li a:hover,
   font-size: calc(1.1rem + 0.7vw);
   max-width: fit-content;
 }
+.bottom ul li h4 {
+  font-size: calc(1.8rem + 0.9vw);
+}
 
 .bottom ul li {
   border-radius: 0rem;
@@ -380,7 +485,6 @@ nav li a:hover,
   background-color: #3f6783;
   color: rgb(188, 205, 2);
   border-radius: 4rem;
-  cursor: url("/public/assets/black&colored_cursor.png"), auto;
   transition: color ease-in-out 1s;
   transition: all 1s linear;
 }
@@ -519,7 +623,7 @@ footer .estimate img {
     margin-top: 2rem;
   }
   .main-body .gallery {
-    grid-template-columns: repeat(auto-fit, 1fr);
+    display: flex;
     flex-direction: column;
     max-width: 100vh;
     height: 50%;
@@ -531,6 +635,18 @@ footer .estimate img {
 }
 
 @media screen and (max-width: 660px) {
+  .colors::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 1rem;
+    content: "Press color icons to change backgrounds!";
+    font-size: calc(1.5em + 2vw);
+    color: limegreen;
+    text-shadow: 2px 2px 2px #3f6783;
+  }
+
   footer .estimate,
   footer .risk-free {
     display: none;
@@ -549,7 +665,7 @@ footer .estimate img {
     padding: 0.05rem;
   }
   .bottom ul li h4 {
-    font-size: calc(2rem + 1vw);
+    font-size: calc(1.7rem + 00.81vw);
   }
 
   .wrapper {
@@ -560,7 +676,10 @@ footer .estimate img {
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 730px) {
+  .note p {
+    display: none;
+  }
   nav ul {
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -575,20 +694,26 @@ footer .estimate img {
 
   .main-body {
     flex-direction: column;
-    height: 210vh;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+    height: auto;
+    width: 100vw;
   }
   .main-body .carousel {
     animation: autoSlide infinite 20s linear 0s;
     text-overflow: ellipsis;
-    width: 100%;
+    width: 100vw;
     height: calc(50rem + 1vh);
   }
   .main-body .gallery {
     background: linear-gradient(rgb(92, 92, 191), green);
-    grid-template-columns: repeat(auto-fit, 2fr);
-    flex-direction: column;
-    max-width: 100vh;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    max-width: 100%;
+    width: 100%;
     height: 50%;
+    padding: 0rem;
+    margin: 0rem;
   }
 
   .main-body .gallery img {
@@ -603,6 +728,12 @@ footer .estimate img {
     100% {
       transform: translate3d(0, -410%, 0);
     }
+  }
+}
+
+@media screen and (max-height: 650px) {
+  .main-head {
+    position: relative;
   }
 }
 
@@ -623,6 +754,12 @@ footer .estimate img {
 
   footer .copyright img {
     height: 15vh;
+  }
+}
+@media screen and (max-width: 900px) {
+  .interactive figure {
+    padding: 0rem;
+    /* width: clamp(30rem, 90vw, 80rem); */
   }
 }
 

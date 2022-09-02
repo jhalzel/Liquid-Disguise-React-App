@@ -11,6 +11,8 @@ import Colors from "../../components/Colors";
 import FloatingList from "../../components/FloatingList";
 import Closer from "../../components/Closer";
 import Footer from "../../components/Footer";
+import InteractiveSlider from "../../components/InteractiveSlider";
+import { SliderData1 } from "./kitchenSlideData1";
 
 export default function Kitchen({
   importAll,
@@ -52,10 +54,6 @@ export default function Kitchen({
   );
   backgrounds.unshift("");
 
-  const midGal = importAll(
-    require.context("../../assets/images/kitch_imgs/mural")
-  );
-
   const list1 = [
     "decorative rag rolling",
     "sponge painting techniques",
@@ -73,6 +71,11 @@ export default function Kitchen({
     "decorations in every style",
     "old world ambience to contemporary",
     "faux finishes",
+  ];
+
+  const caption = [
+    "In the process of Taping Preparation in the dining room preparing for striping",
+    "How Liquid Disguise creates the elegance of hand-painted striping in a dining room.",
   ];
 
   const list2 = [
@@ -108,36 +111,28 @@ export default function Kitchen({
         }
       />
       {
-        <section className="kDisplay">
+        <section className='kDisplay'>
           {/* conditional styling of carousel */}
-          <div className="kCarousel">
+          <div className='kCarousel'>
             <FloatingList list={list1} />
           </div>
           {/* conditional middle Gallery */}
-          <section className="kGallery">
-            <div>
-              <img src={midGal[0]} alt="image1" />
-              <h5>
-                "In the process of how Liquid Disguise&copy; creates the
-                elegance of hand-painted striping in a dining room."
-              </h5>
-            </div>
-            <div>
-              <img src={midGal[1]} alt="image2" />
-              <h5>
-                "Finished hand-painted striping job by Liquid Disguise&copy;"
-              </h5>
-            </div>
-          </section>
+        </section>
+      }
+      {
+        <section className='kGallery'>
+          <div className='kIntContainer'>
+            {<InteractiveSlider slides={SliderData1} caption={caption} />}
+          </div>
         </section>
       }
       <Subheaders
         sub1={""}
         sub2={"Liquid Disguise creates decorative painted finishes on: "}
       />
-      <section className="satisfied">
+      <section className='satisfied'>
         {" "}
-        <div className="kSidewaysList">
+        <div className='kSidewaysList'>
           <FloatingList list={list2} />
         </div>
       </section>

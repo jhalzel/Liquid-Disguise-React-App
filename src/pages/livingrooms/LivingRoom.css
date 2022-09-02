@@ -35,7 +35,7 @@
 }
 
 .livCarousel {
-  animation: lScroll infinite 12s linear;
+  animation: lScroll infinite 20s linear;
 }
 @keyframes lScroll {
   0% {
@@ -47,7 +47,7 @@
 }
 
 .livCarousel2 {
-  animation: lScroll2 infinite 12s linear;
+  animation: lScroll2 infinite 20s linear;
 }
 
 @keyframes lScroll2 {
@@ -61,10 +61,10 @@
 
 @media screen and (max-width: 750px) {
   .livCarousel {
-    animation: lScroll infinite 10s linear;
+    animation: lScroll infinite 20s linear;
   }
   .livCarousel2 {
-    animation: lScroll2 infinite 10s linear;
+    animation: lScroll2 infinite 20s linear;
   }
 
   .bus-main-body .livCarousel {
@@ -82,7 +82,7 @@
       transform: translate3d(0, 90%, 0);
     }
     100% {
-      transform: translate3d(0, -300%, 0);
+      transform: translate3d(0, -310%, 0);
     }
   }
 

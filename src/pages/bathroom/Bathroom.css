@@ -66,22 +66,19 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: stretch;
+  overflow: hidden;
   text-align: center;
-  flex-wrap: wrap;
 }
 
 .bathBottom ul {
   display: grid;
-  margin: 1rem;
   grid-template-columns: repeat(4, 1fr);
-  max-width: 95%;
 }
 .bathBottom ul li {
   display: inline-flex;
   align-items: center;
   justify-self: center;
-  padding: 5rem;
+  padding: 2rem;
   font-weight: 600;
   font-size: calc(1.1rem + 0.7vw);
   max-width: fit-content;

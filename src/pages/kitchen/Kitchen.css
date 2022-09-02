@@ -4,8 +4,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  flex-wrap: wrap;
   width: 100%;
+  height: 50vh;
   position: relative;
   overflow: hidden;
 }
@@ -27,33 +27,42 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 11rem;
+  height: 12rem;
   width: 100%;
-  background-image: none;
 }
 
-.kCarousel li:hover {
-  /* transition: background linear 1s; */
-  transition: all linear 0.7s;
-  color: limegreen;
-  background: rgb(35, 98, 119);
-  border-radius: 3rem;
-  cursor: url("/public/assets/black&colored_cursor.png"), auto;
+.kGallery {
+  height: 80vh;
+  padding: 1rem 0rem 2rem 0rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(rgba(92, 92, 191, 0.8), green);
+}
+.kGallery .kIntContainer {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-align: center;
+  max-width: 100vw;
+  width: clamp(30rem, 100vw, 65rem);
 }
 
-@media screen and (max-width: 1555px) {
-  .kDisplay {
-    justify-content: center;
-    align-items: baseline;
-  }
+.kGallery .kIntContainer figure {
+  height: 100%;
+  padding-bottom: 12%;
 }
 
-.kDisplay .kGallery {
-  padding: 5rem;
-  max-width: 50%;
+.kGallery figcaption {
+  width: 100%;
+  text-align: center;
+  font-size: calc(1rem + 01vw);
 }
 
-.kDisplay .kGallery img {
+.kDisplay .kGallery .img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -88,23 +97,13 @@
   margin: 0mm;
 }
 
-/* .kDisplay .kGallery div:hover, */
-.kDisplay .kGallery div:hover,
-.kDisplay .kGallery div:hover h5 {
-  background-color: #3f6783;
+.kGallery .kIntContainer:hover {
   border-radius: 30px;
-  font-size: x-large;
   padding: 1rem;
+  font-size: x-large;
   color: limegreen;
-  transition: all 1s ease-in-out;
-  cursor: url("/public/assets/black&colored_cursor.png"), auto;
-}
-
-.kDisplay .kGallery div:hover {
-  transition: all 1s ease-in-out;
-  border: solid 20px #3f6783;
-  border-radius: 2rem;
   background-color: #3f6783;
+  transition: all 0.5s ease-in;
 }
 
 @keyframes kSideScroll {
@@ -116,101 +115,73 @@
   }
 }
 
-@media screen and (max-width: 1000px) {
-  .kDisplay .kCarousel {
-    height: calc(50rem + 1vw);
-  }
-  .kCarousel ul {
-    animation: kSlide infinite 20s linear 0s;
-  }
+.kDisplay .kCarousel {
+  height: calc(10rem + 1vwh);
+}
 
-  .kCarousel li:hover {
-    transition: none;
-    color: black;
-    background: transparent;
-    border-radius: none;
-    padding: auto;
-    cursor: auto;
-  }
-  .kDisplay {
-    flex-direction: column;
-    max-width: 100%;
-    padding: 0rem;
-    margin: 0rem;
-  }
+.kCarousel ul {
+  animation: kSlide infinite 20s linear 0s;
+}
 
-  .kDisplay .kCarousel {
-    width: 70%;
-  }
+.kDisplay {
+  flex-direction: column;
+  max-width: 100%;
+  padding: 0rem;
+  margin: 0rem;
+}
 
-  .kDisplay .kGallery {
-    display: flex;
-    flex-direction: row;
-    align-items: space-evenly;
-    justify-content: space-evenly;
-    max-width: 100%;
-    padding: 0.1vw;
-    background: linear-gradient(rgba(92, 92, 191, 0.8), green);
-  }
-  .kDisplay .kGallery div {
-    margin-bottom: 8rem;
-  }
-  .kDisplay .kGallery img {
-    padding: 0.3rem;
-    margin: 0rem;
-    border-radius: 2rem;
-  }
+.kDisplay .kCarousel {
+  width: 70%;
+}
 
-  .kDisplay .kGallery div:hover h5 {
-    width: 100%;
-    background-color: transparent;
-    border-radius: 30px;
-    font-size: x-large;
-    padding: none;
-    color: limegreen;
-    transition: all 1s ease-in-out 0.1s;
-    cursor: url("/public/assets/black&colored_cursor.png"), auto;
-  }
+.kDisplay .kGallery img {
+  border-radius: 2rem;
+}
 
-  .kDisplay .kGallery div:hover {
-    transition: all 1s ease-in-out;
-    border-radius: 0rem;
-    background-color: transparent;
-    cursor: url("/public/assets/black&colored_cursor.png"), auto;
-    transition: all 1s ease-in-out;
-    padding-bottom: 10rem;
-    border-radius: 2rem;
-    background-color: #3f6783;
+@keyframes kSlide {
+  0% {
+    transform: translate3d(0, 60%, 0);
   }
-
-  @keyframes kSlide {
-    0% {
-      transform: translate3d(0, 40%, 0);
-    }
-    100% {
-      transform: translate3d(0, -100%, 0);
-    }
-  }
-
-  @keyframes kSideScroll {
-    0% {
-      transform: translate3d(49%, 0, 0);
-    }
-    100% {
-      transform: translate3d(-53%, 0, 0);
-    }
-  }
-
-  .kDisplay .kGallery div {
-    padding-bottom: 5rem;
+  100% {
+    transform: translate3d(0, -60%, 0);
   }
 }
 
-@media screen and (max-width: 725px) {
-  .kDisplay .kGallery {
-    flex-direction: column;
+@keyframes kSideScroll {
+  0% {
+    transform: translate3d(49%, 0, 0);
   }
-  .kDisplay .kGallery div:hover {
-    padding-bottom: calc(10rem * 1.3);
+  100% {
+    transform: translate3d(-53%, 0, 0);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .left-arrow {
+    left: -4px;
+    z-index: 5;
+  }
+  .right-arrow {
+    right: -4px;
+    z-index: 5;
+  }
+  .kGallery .kIntContainer .slider figure {
+    width: 100%;
+  }
+  .kGallery {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .kGallery figure .img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1555px) {
+  .kDisplay {
+    justify-content: center;
+    align-items: baseline;
   }
 }

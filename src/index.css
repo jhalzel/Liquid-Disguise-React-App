@@ -46,15 +46,15 @@ p,
 li {
   font-family: "Cinzel Decorative", cursive;
   text-shadow: 1px 5px 4px rgb(152, 143, 160);
-  font-size: calc(2.3rem + 0.5vw);
+  font-size: clamp(2rem, 1.7vw, 5rem);
   list-style: none;
 }
-
+/* calc(2.3rem + 0.5vw); */
 .p,
 .li4 {
   font-family: "Cinzel Decorative", cursive;
   color: rgb(14, 77, 171);
-  font-size: calc(3rem + 0.5vw);
+  font-size: clamp(2rem, 1.5vw, 5rem);
   font-weight: 700;
   margin: 1rem;
   text-shadow: 2px 2px 2px rgb(255, 255, 255);
@@ -65,6 +65,7 @@ li {
 }
 
 .li2,
+.note .li2,
 .li2 li,
 .li3 li {
   color: white;

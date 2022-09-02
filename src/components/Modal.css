@@ -20,6 +20,7 @@
   margin: 200px auto;
   background: linear-gradient(rgba(3, 84, 142, 1), rgb(5, 152, 56));
   border-radius: 10px;
+  z-index: 11;
 }
 .modal p {
   font-family: "Roboto", sans-serif;
@@ -31,6 +32,7 @@
 .modal div {
   display: flex;
   justify-content: flex-end;
+  z-index: 10;
 }
 
 .x {
@@ -43,4 +45,5 @@
   padding: 2px 9px 4px 9px;
   font-size: 2em;
   color: wheat;
+  z-index: 10;
 }

@@ -4,10 +4,10 @@ import { HiChevronDoubleLeft, HiChevronDoubleRight } from "react-icons/hi";
 // styles
 import "./InteractiveSlider.css";
 
-export default function InteractiveSlider({ slides }) {
+export default function InteractiveSlider({ slides, caption }) {
   //states
   const [cur, setCur] = useState(0);
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("slide active1");
   const length = slides.length;
 
   const nextSlide = () => {
@@ -30,15 +30,15 @@ export default function InteractiveSlider({ slides }) {
   }
 
   return (
-    <section className="slider">
+    <section className='slider'>
       <HiChevronDoubleLeft
-        className="left-arrow"
+        className='left-arrow'
         onClick={prevSlide}
         onMouseOver={(e) => (e.currentTarget.style.color = "limegreen")}
         onMouseLeave={(e) => (e.currentTarget.style.color = "rgb(53, 53, 117)")}
       />
       <HiChevronDoubleRight
-        className="right-arrow"
+        className='right-arrow'
         onClick={nextSlide}
         onMouseOver={(e) => (e.currentTarget.style.color = "limegreen")}
         onMouseLeave={(e) => (e.currentTarget.style.color = "rgb(53, 53, 117)")}
@@ -50,7 +50,10 @@ export default function InteractiveSlider({ slides }) {
           <div className={index === cur ? active : "slide"} key={index}>
             {/* if index is the current image number, place image */}
             {index === cur && (
-              <img className="img" src={slide.image} alt="image" />
+              <figure>
+                <img className='img' src={slide.image} alt='imge' />
+                <figcaption>{caption[index]}</figcaption>
+              </figure>
             )}
           </div>
         );

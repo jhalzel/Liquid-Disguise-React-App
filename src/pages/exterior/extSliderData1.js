@@ -14,4 +14,10 @@ export const SliderData1 = [
   {
     image: mural[1],
   },
+  {
+    image: mural[2],
+  },
+  {
+    image: mural[3],
+  },
 ];

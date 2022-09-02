@@ -17,38 +17,38 @@
 
 .woodGal1 {
   grid-row: 1/2;
-  grid-column: 1/3;
+  grid-column: 6/10;
 }
 .woodGal2 {
-  grid-row: 2/4;
-  grid-column: 1/3;
+  grid-row: 1/3;
+  grid-column: 13/17;
 }
 .woodGal3 {
-  grid-row: 1/3;
-  grid-column: 3/6;
-  object-position: 15%;
+  object-position: 38%;
+  grid-row: 2/4;
+  grid-column: 1/3;
 }
 .woodGal4 {
   grid-row: 3/4;
   grid-column: 3/6;
-  object-position: 25%;
 }
 
 .woodGal5 {
-  grid-row: 1/3;
-  grid-column: 13/17;
+  grid-row: 1/2;
+  grid-column: 1/3;
 }
 .woodGal6 {
   grid-row: 2/3;
   grid-column: 9/13;
 }
 .woodGal7 {
-  grid-row: 2/4;
-  grid-column: 6/9;
+  grid-row: 1/3;
+  grid-column: 3/6;
+  object-position: 100%;
 }
 .woodGal8 {
-  grid-row: 1/2;
-  grid-column: 6/10;
+  grid-row: 2/4;
+  grid-column: 6/9;
 }
 .woodGal9 {
   grid-row: 3/4;
@@ -64,24 +64,24 @@
 }
 
 .swg1 {
-  grid-row: 3/4;
-  grid-column: 4/5;
-}
-.swg2 {
   grid-row: 1/3;
   grid-column: 3/4;
+}
+.swg2 {
+  grid-row: 3/4;
+  grid-column: 4/5;
 }
 .swg3 {
   grid-row: 3/4;
   grid-column: 3/4;
 }
 .swg4 {
-  grid-row: 1/4;
-  grid-column: 1/3;
-}
-.swg5 {
   grid-row: 1/3;
   grid-column: 4/7;
+}
+.swg5 {
+  grid-row: 1/4;
+  grid-column: 1/3;
 }
 .swg6 {
   grid-row: 3/4;
@@ -107,10 +107,6 @@
   margin: 0mm;
 }
 
-.woodCarousel {
-  animation: wScroll infinite 6s linear;
-}
-
 @keyframes wScroll {
   0% {
     transform: translate3d(0, 90%, 0);
@@ -118,10 +114,6 @@
   100% {
     transform: translate3d(0, -100%, 0);
   }
-}
-
-.woodCarousel2 {
-  animation: wScroll2 infinite 13s linear;
 }
 
 @keyframes wScroll2 {
@@ -133,35 +125,34 @@
   }
 }
 
-@media screen and (max-width: 700px) {
-  .woodCarousel,
-  .woodCarousel2 {
-    text-overflow: ellipsis;
-    width: 100%;
-  }
+.woodCarousel,
+.woodCarousel2 {
+  text-overflow: ellipsis;
+  width: 100%;
+}
 
-  .woodCarousel {
-    animation: wScroll infinite 10s linear;
-  }
-  .woodCarousel2 {
-    animation: wScroll2 infinite 10s linear;
-    height: calc(65rem + 1vh);
-  }
+.woodCarousel {
+  height: calc(50rem + 1vh);
+  animation: wScroll infinite 12s linear;
+}
+.woodCarousel2 {
+  height: calc(50rem + 1vh);
+  animation: wScroll2 infinite 22s linear;
+}
 
-  @keyframes wScroll {
-    0% {
-      transform: translate3d(0, 100%, 0);
-    }
-    100% {
-      transform: translate3d(0, -100%, 0);
-    }
+@keyframes wScroll {
+  0% {
+    transform: translate3d(0, 100%, 0);
   }
-  @keyframes wScroll2 {
-    0% {
-      transform: translate3d(0, -240%, 0);
-    }
-    100% {
-      transform: translate3d(0, 100%, 0);
-    }
+  100% {
+    transform: translate3d(0, -130%, 0);
+  }
+}
+@keyframes wScroll2 {
+  0% {
+    transform: translate3d(0, -330%, 0);
+  }
+  100% {
+    transform: translate3d(0, 100%, 0);
   }
 }

@@ -10,17 +10,17 @@ export default function Modal({ setShowModal }) {
       onClick={() => setShowModal(false)}
       onMouseOver={(e) => (e.currentTarget.style.color = "limegreen")}
       onMouseLeave={(e) => (e.currentTarget.style.color = "blue")}
-      to="/"
+      to='/'
     >
       click me
     </Link>
   );
 
   return (
-    <div className="modal-backdrop">
-      <div className="modal">
+    <div className='modal-backdrop'>
+      <div className='modal'>
         <div>
-          <button onClick={() => setShowModal(false)} className="x">
+          <button onClick={() => setShowModal(false)} className='x'>
             x
           </button>
         </div>

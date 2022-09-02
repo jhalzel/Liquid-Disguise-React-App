@@ -10,7 +10,7 @@ import Modal from "./components/Modal";
 
 //pages
 import BusinessOffice from "./pages/business/Business";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import Contact from "./pages/contact/Contact";
 import Signs from "./pages/signs/Signs";
 import Churches from "./pages/churches/Churches";
@@ -79,7 +79,7 @@ function App() {
       <a
         onMouseOver={(e) => (e.currentTarget.style.color = "limegreen")}
         onMouseLeave={(e) => (e.currentTarget.style.color = "blue")}
-        href="tel: 7742391074"
+        href='tel: 7742391074'
       >
         {" "}
         774-239-1074
@@ -180,11 +180,9 @@ function App() {
       console.log("includes");
       for (let i = 0; i < paras.length; i++) {
         if (paras[i]) {
-          // paras[i].forEach((cl) => console.log(cl));
           paras[i].forEach((cl) => cl.classList.add("li2"));
         }
       }
-      // subtitle.forEach((s) => console.log(s));
       subtitle.forEach((s) => s.classList.add("li3"));
     } else {
       for (let j = 0; j < paras.length; j++) {
@@ -236,129 +234,129 @@ function App() {
   console.log(darkBackgrounds);
   // App begins
   return (
-    <div className="App" style={{ background: `url(${back})` }}>
+    <div className='App' style={{ background: `url(${back})` }}>
       <BrowserRouter>
         <ScrollToTop linkClick={linkClick} setfalse={setfalse} />
         {/* header */}
-        <header className="main-head">
+        <header className='main-head'>
           {/* NAVIGATION MENU */}
           <nav>
-            <div id="logo">
+            <div id='logo'>
               <div>
                 <h1>Liquid-Disguise</h1>
                 <h4>{page}</h4>
               </div>
             </div>
             <ul>
-              <li className="home" onClick={(e) => handleMenu(e)}>
-                <Link to="/">Home</Link>
+              <li className='home' onClick={(e) => handleMenu(e)}>
+                <Link to='/'>Home</Link>
               </li>
               <li>
-                <div className="com-wrapper">
+                <div className='com-wrapper'>
                   <span
-                    className="commercial"
+                    className='commercial'
                     onClick={(e) => {
                       handleMenubar(e);
                     }}
                   >
                     Commercial
                   </span>
-                  <div className="com-menu">
-                    <ul className="holder">
+                  <div className='com-menu'>
+                    <ul className='holder'>
                       <li
                         onClick={(e) => {
                           handleMenubar2(e);
                         }}
                       >
-                        <Link to="/business">Business & Office</Link>
+                        <Link to='/business'>Business & Office</Link>
                       </li>
                       <li
                         onClick={(e) => {
                           handleMenubar2(e);
                         }}
                       >
-                        <Link to="/churchesAndTemples">Churches & Temples</Link>
+                        <Link to='/churchesAndTemples'>Churches & Temples</Link>
                       </li>
                       <li
                         onClick={(e) => {
                           handleMenubar2(e);
                         }}
                       >
-                        <Link to="/signs">Signs</Link>
+                        <Link to='/signs'>Signs</Link>
                       </li>
                       <li
                         onClick={(e) => {
                           handleMenubar2(e);
                         }}
                       >
-                        <Link to="/exteriors">Exteriors</Link>
+                        <Link to='/exteriors'>Exteriors</Link>
                       </li>
                     </ul>
                   </div>
                 </div>
               </li>
               <li>
-                <div className="com-wrapper">
+                <div className='com-wrapper'>
                   <span
-                    className="residential"
+                    className='residential'
                     onClick={(e) => handleMenubar(e)}
                   >
                     Residential
                   </span>
-                  <div className="com-menu">
-                    <ul className="holder">
+                  <div className='com-menu'>
+                    <ul className='holder'>
                       <li
                         onClick={(e) => {
                           handleMenubar2(e);
                         }}
                       >
-                        <Link to="/kitchenAndDining">Kitchens & Dining</Link>
+                        <Link to='/kitchenAndDining'>Kitchens & Dining</Link>
                       </li>
                       <li
                         onClick={(e) => {
                           handleMenubar2(e);
                         }}
                       >
-                        <Link to="/livingRooms">Living Rooms</Link>
+                        <Link to='/livingRooms'>Living Rooms</Link>
                       </li>
                       <li
                         onClick={(e) => {
                           handleMenubar2(e);
                         }}
                       >
-                        <Link to="/bedrooms">Bedrooms</Link>
+                        <Link to='/bedrooms'>Bedrooms</Link>
                       </li>
                       <li
                         onClick={(e) => {
                           handleMenubar2(e);
                         }}
                       >
-                        <Link to="/bathrooms">Bathrooms</Link>
+                        <Link to='/bathrooms'>Bathrooms</Link>
                       </li>
                       <li
                         onClick={(e) => {
                           handleMenubar2(e);
                         }}
                       >
-                        <Link to="/woodwork">Woodwork</Link>
+                        <Link to='/woodwork'>Woodwork</Link>
                       </li>
                     </ul>
                   </div>
                 </div>
               </li>
               <li>
-                <div className="contact-com-wrapper">
-                  <span className="contact" onClick={(e) => handleMenubar(e)}>
+                <div className='contact-com-wrapper'>
+                  <span className='contact' onClick={(e) => handleMenubar(e)}>
                     Contact
                   </span>
-                  <div className="com-menu">
-                    <ul className="holder">
+                  <div className='com-menu'>
+                    <ul className='holder'>
                       <li
                         onClick={(e) => {
                           handleMenubar2(e);
                         }}
                       >
-                        <Link to="contact">Contact</Link>
+                        <Link to='contact'>Contact</Link>
                       </li>
                       <li
                         onClick={(e) => {
@@ -366,7 +364,7 @@ function App() {
                           setLinkClick(true);
                         }}
                       >
-                        <Link to="/contact/#about">About</Link>
+                        <Link to='/contact/#about'>About</Link>
                       </li>
                     </ul>
                   </div>
@@ -378,7 +376,7 @@ function App() {
 
         <Routes>
           <Route
-            path="/"
+            path='/'
             element={
               <Home
                 importAll={importAll}
@@ -391,7 +389,7 @@ function App() {
             }
           />
           <Route
-            path="/business"
+            path='/business'
             element={
               <BusinessOffice
                 importAll={importAll}
@@ -403,7 +401,7 @@ function App() {
             }
           />
           <Route
-            path="churchesAndTemples"
+            path='churchesAndTemples'
             element={
               <Churches
                 importAll={importAll}
@@ -415,7 +413,7 @@ function App() {
             }
           />
           <Route
-            path="signs"
+            path='signs'
             element={
               <Signs
                 importAll={importAll}
@@ -427,7 +425,7 @@ function App() {
             }
           />
           <Route
-            path="exteriors"
+            path='exteriors'
             element={
               <Exteriors
                 importAll={importAll}
@@ -439,7 +437,7 @@ function App() {
             }
           />
           <Route
-            path="kitchenAndDining"
+            path='kitchenAndDining'
             element={
               <Kitchen
                 importAll={importAll}
@@ -451,7 +449,7 @@ function App() {
             }
           />
           <Route
-            path="livingRooms"
+            path='livingRooms'
             element={
               <LivingRooms
                 importAll={importAll}
@@ -463,7 +461,7 @@ function App() {
             }
           />
           <Route
-            path="bedrooms"
+            path='bedrooms'
             element={
               <Bedrooms
                 importAll={importAll}
@@ -475,7 +473,7 @@ function App() {
             }
           />
           <Route
-            path="bathrooms"
+            path='bathrooms'
             element={
               <Bathrooms
                 importAll={importAll}
@@ -487,7 +485,7 @@ function App() {
             }
           />
           <Route
-            path="woodwork"
+            path='woodwork'
             element={
               <Woodwork
                 importAll={importAll}
@@ -499,7 +497,7 @@ function App() {
             }
           />
           <Route
-            path="contact"
+            path='contact'
             element={
               <Contact
                 setLinkClick={setLinkClick}
@@ -510,7 +508,7 @@ function App() {
               />
             }
           />
-          <Route exact path="contact/#about" element={<About />} />
+          <Route exact path='contact/#about' element={<About />} />
         </Routes>
       </BrowserRouter>
     </div>
