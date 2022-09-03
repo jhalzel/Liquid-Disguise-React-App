@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
-export default function ScrollToTop({ linkClick }) {
+export default function ScrollToTop({ linkClick, setfalse }) {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -22,6 +22,9 @@ export default function ScrollToTop({ linkClick }) {
       }, 1);
     }
   }, [pathname, linkClick]);
+
+  //setting Link-click false in App.js
+  setfalse();
 
   return;
 }

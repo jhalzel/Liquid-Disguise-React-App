@@ -113,10 +113,10 @@
 
 .extBottom2 .slideWrapper figure figcaption {
   font-size: large;
-  margin: 1rem;
+  max-width: 100%;
+  text-align: center;
 }
 
-.img:hover,
 .slideWrapper figure:hover {
   cursor: url("/public/assets/black&colored_cursor.png"), auto;
   background-color: #3f6783;
@@ -124,6 +124,12 @@
   border-radius: 30px;
   padding: 1rem;
   transition: all 0.5s linear;
+}
+.slideWrapper figure:hover figcaption {
+  padding: 1rem;
+  background-color: #3f6783;
+  transition: all 0.5s linear;
+  border-radius: 0rem 0rem 2rem 2rem;
 }
 
 .extMural figcaption {
@@ -163,6 +169,13 @@
   }
   100% {
     transform: translate3d(0, -100%, 0);
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .extBottom2 .slideWrapper .slideContainer {
+    padding: 0.4rem;
+    padding-bottom: 2rem;
   }
 }
 

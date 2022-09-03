@@ -57,8 +57,8 @@ export default function Contact({ setPage }) {
   ];
 
   return (
-    <section className="contactBody">
-      <section id="contact">
+    <section className='contactBody'>
+      <section id='contact'>
         {/* <!-- from formpree.io service to submit actual forms to email --> */}
         <form
           ref={form}
@@ -67,27 +67,27 @@ export default function Contact({ setPage }) {
           }}
         >
           <h2>Contact Liquid Disguise</h2>
-          <div className="name-form">
-            <label htmlFor="name">Name:</label>
-            <input id="name" type="text" name="name" required />
+          <div className='name-form'>
+            <label htmlFor='name'>Name:</label>
+            <input id='name' type='text' name='name' required />
           </div>
-          <div className="email-form">
-            <label htmlFor="email">Email:</label>
-            <input id="email" type="email" name="email" required />
+          <div className='email-form'>
+            <label htmlFor='email'>Email:</label>
+            <input id='email' type='email' name='email' required />
           </div>
-          <div className="phone-form">
-            <label htmlFor="phone">Phone:</label>
-            <input id="phone" type="phone" name="phone" required />
+          <div className='phone-form'>
+            <label htmlFor='phone'>Phone:</label>
+            <input id='phone' type='phone' name='phone' required />
           </div>
-          <div className="text-form">
-            <label htmlFor="message"> Message:</label>
+          <div className='text-form'>
+            <label htmlFor='message'> Message:</label>
             <textarea
               style={{ width: "100%" }}
-              name="message"
-              id="message"
+              name='message'
+              id='message'
             ></textarea>
           </div>
-          <button onSubmit={(e) => e.preventDefault()} type="submit">
+          <button onSubmit={(e) => e.preventDefault()} type='submit'>
             Submit
           </button>
         </form>

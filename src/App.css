@@ -89,7 +89,7 @@ nav .com-menu .holder {
   position: absolute;
   background-color: #3f6783;
   border-radius: 0% 0% 1rem 1rem;
-  max-width: 100%;
+  max-width: 100vw;
   width: 100%;
 }
 
@@ -123,7 +123,7 @@ nav li a:hover,
 .residential:hover,
 .contact:hover {
   cursor: url("/public/assets/black&colored_cursor.png"), auto;
-  animation: hoverAnimation 0.3s ease forwards 0.18s;
+  animation: hoverAnimation 0.2s ease forwards 0.18s;
 }
 
 .contact-com-wrapper2 {
@@ -214,24 +214,24 @@ nav li a:hover,
   opacity: 0.8;
   position: absolute;
   right: 0.1vw;
-  top: 45rem;
+  top: calc(40rem + 10vh);
   font-size: 10rem;
   color: rgb(53, 53, 117);
   cursor: url("/public/assets/black&colored_cursor.png"), auto;
   user-select: none;
-  z-index: 5;
+  z-index: 10;
 }
 
 .navLeft {
   opacity: 0.8;
   position: absolute;
-  top: 45rem;
+  top: calc(40rem + 10vh);
   left: -1rem;
   font-size: 10rem;
   color: rgb(53, 53, 117);
   cursor: url("/public/assets/black&colored_cursor.png"), auto;
   user-select: none;
-  z-index: 3;
+  z-index: 10;
 }
 
 .navRight:hover path,
@@ -242,32 +242,46 @@ nav li a:hover,
 }
 
 .sliding-gallery {
-  height: 63vh;
-  overflow: hidden;
+  min-height: 63vh;
   overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
 }
 
 .sliding-gallery ul {
-  height: 100%;
-  position: absolute;
   display: flex;
-  -ms-overflow-style: none;
+  padding: 1em 1.5em;
+  position: absolute;
+  height: 100%;
+  width: auto;
+  scrollbar-track-color: transparent;
   scrollbar-width: none;
   scroll-behavior: smooth;
-  padding: 1rem;
+  padding: 1rem 0rem;
+  z-index: 3;
 }
 
-.sliding-gallery li {
-  position: relative;
+.sliding-gallery li,
+.sliding-gallery li div {
+  height: 100%;
   width: clamp(45rem, 40vw, 60rem);
-  padding: 0.2rem;
+  padding: 0.5rem;
+  transition: 1s;
 }
 
-.sliding-gallery img {
+.sliding-gallery li div img {
   object-fit: cover;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   width: 100%;
   height: 100%;
+  position: relative;
+}
+.sliding-gallery li:hover,
+.sliding-gallery li:hover div,
+.sliding-gallery li:hover div img {
+  border-radius: 2rem;
+  z-index: 9;
+  transform: scale(1.03, 1.03);
 }
 
 #subtitle {
@@ -349,7 +363,7 @@ nav li a:hover,
 .pallet img {
   width: 100%;
   height: 100%;
-  max-width: 22rem;
+  max-width: 20rem;
   margin: auto;
   padding: 0.7rem;
   object-fit: contain;
@@ -368,7 +382,7 @@ nav li a:hover,
   text-align: center;
   height: auto;
   margin: auto;
-  padding: 4rem 3rem;
+  padding: 4rem 1rem 0rem 1rem;
 }
 
 .main-body {
@@ -410,7 +424,7 @@ nav li a:hover,
 
 .main-body .gallery {
   height: 100%;
-  max-width: 65%;
+  max-width: 100vw;
   margin: auto;
   display: inline-grid;
   grid-template-columns: repeat(auto-fit, 1fr);
@@ -462,7 +476,7 @@ nav li a:hover,
   padding: 2rem;
   margin: 1rem;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 95%;
+  max-width: 100vw;
 }
 .bottom ul li {
   display: inline-flex;
@@ -471,7 +485,6 @@ nav li a:hover,
   padding: 1rem;
   font-weight: 600;
   font-size: calc(1.1rem + 0.7vw);
-  max-width: fit-content;
 }
 .bottom ul li h4 {
   font-size: calc(1.8rem + 0.9vw);
@@ -484,9 +497,9 @@ nav li a:hover,
 .bottom ul li:hover {
   background-color: #3f6783;
   color: rgb(188, 205, 2);
-  border-radius: 4rem;
+  border-radius: 2rem;
   transition: color ease-in-out 1s;
-  transition: all 1s linear;
+  transition: all 0.4s linear;
 }
 
 .wrapper {
@@ -544,10 +557,11 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  justify-content: space-evenly;
+  margin-bottom: 0rem;
 }
 
 footer .copyright {
+  height: auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -625,7 +639,7 @@ footer .estimate img {
   .main-body .gallery {
     display: flex;
     flex-direction: column;
-    max-width: 100vh;
+    max-width: 100vw;
     height: 50%;
   }
   .main-body .gallery img {
@@ -635,6 +649,9 @@ footer .estimate img {
 }
 
 @media screen and (max-width: 660px) {
+  .main-head {
+    position: relative;
+  }
   .colors::after {
     display: flex;
     justify-content: center;
@@ -647,21 +664,17 @@ footer .estimate img {
     text-shadow: 2px 2px 2px #3f6783;
   }
 
-  footer .estimate,
-  footer .risk-free {
-    display: none;
-  }
   .bottom ul {
     padding: 2rem;
     margin: 1rem;
     grid-template-columns: repeat(auto-fit, 1fr);
-    max-width: 95vh;
+    max-width: 100vw;
   }
 }
 
 @media screen and (max-width: 687px) {
   .bottom ul {
-    max-width: 95vh;
+    max-width: 100vw;
     padding: 0.05rem;
   }
   .bottom ul li h4 {
@@ -676,10 +689,24 @@ footer .estimate img {
   }
 }
 
-@media screen and (max-width: 730px) {
-  .note p {
-    display: none;
+@media screen and (max-height: 700px) {
+  .colors::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 1rem;
+    content: "Press color icons to change backgrounds!";
+    font-size: calc(1.5em + 2vw);
+    color: limegreen;
+    text-shadow: 2px 2px 2px #3f6783;
   }
+  .main-head {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 730px) {
   nav ul {
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -708,10 +735,6 @@ footer .estimate img {
   }
   .main-body .gallery {
     background: linear-gradient(rgb(92, 92, 191), green);
-    grid-template-columns: repeat(auto-fit, 1fr);
-    max-width: 100%;
-    width: 100%;
-    height: 50%;
     padding: 0rem;
     margin: 0rem;
   }
@@ -731,13 +754,10 @@ footer .estimate img {
   }
 }
 
-@media screen and (max-height: 650px) {
-  .main-head {
-    position: relative;
-  }
-}
-
 @media screen and (max-width: 780px) {
+  .contact {
+    padding: 0rem;
+  }
   .wrapper,
   .mural {
     height: auto;
@@ -746,10 +766,9 @@ footer .estimate img {
     border: none;
   }
 
-  footer .risk-free img,
-  footer .estimate img {
-    width: calc(8rem + 1.5vw);
-    height: calc(8rem + 1.5vw);
+  footer .estimate,
+  footer .risk-free {
+    display: none;
   }
 
   footer .copyright img {
@@ -759,7 +778,23 @@ footer .estimate img {
 @media screen and (max-width: 900px) {
   .interactive figure {
     padding: 0rem;
-    /* width: clamp(30rem, 90vw, 80rem); */
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .note p {
+    display: none;
+  }
+  .colors::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 1rem;
+    content: "Press color icons to change backgrounds!";
+    font-size: calc(1.5em + 2vw);
+    color: limegreen;
+    text-shadow: 2px 2px 2px #3f6783;
   }
 }
 

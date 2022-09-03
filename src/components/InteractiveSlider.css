@@ -22,6 +22,7 @@
   color: rgb(53, 53, 117);
   cursor: url("/public/assets/black&colored_cursor.png"), auto;
   user-select: none;
+  padding: 0rem;
 }
 .left-arrow {
   position: absolute;

@@ -500,7 +500,6 @@ function App() {
             path='contact'
             element={
               <Contact
-                setLinkClick={setLinkClick}
                 setBack={setBack}
                 setPage={setPage}
                 handleClick={handleClick}

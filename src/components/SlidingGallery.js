@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from "react";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 //icons
 import { HiChevronDoubleLeft, HiChevronDoubleRight } from "react-icons/hi";
@@ -9,6 +9,21 @@ import { HiChevronDoubleLeft, HiChevronDoubleRight } from "react-icons/hi";
 import ImageList from "./ImageList";
 
 export default function SlidingGallery({ gallery, cName }) {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = (e) => {
+    console.log(e.currentTarget.scrollLeft);
+    var position = e.currentTarget.scrollLeft;
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollPosition, handleScroll]);
+
   //refs
   const carousel = useRef(null);
 
@@ -44,7 +59,11 @@ export default function SlidingGallery({ gallery, cName }) {
           scrollRight(e);
         }}
       />
-      <section className='sliding-gallery' ref={carousel}>
+      <section
+        className='sliding-gallery'
+        ref={carousel}
+        onMouseOver={handleScroll}
+      >
         <ImageList gallery={gallery} cName={cName} />
       </section>
     </>

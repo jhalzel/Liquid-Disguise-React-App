@@ -16,6 +16,7 @@ import InteractiveSlider from "../../components/InteractiveSlider";
 import { SliderData } from "./homeIntSliderData";
 
 export default function Home({
+  ref,
   importAll,
   setPage,
   setBack,

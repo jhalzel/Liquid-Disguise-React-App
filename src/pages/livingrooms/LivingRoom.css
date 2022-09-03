@@ -61,10 +61,10 @@
 
 @media screen and (max-width: 750px) {
   .livCarousel {
-    animation: lScroll infinite 20s linear;
+    animation: lScroll infinite 12s linear;
   }
   .livCarousel2 {
-    animation: lScroll2 infinite 20s linear;
+    animation: lScroll2 infinite 12s linear;
   }
 
   .bus-main-body .livCarousel {
