@@ -87,11 +87,11 @@
 
 @media screen and (max-width: 750px) {
   .left-arrow {
-    left: -4px;
+    left: 1px;
     z-index: 5;
   }
   .right-arrow {
-    right: -4px;
+    right: 1px;
     z-index: 5;
   }
   .slider {

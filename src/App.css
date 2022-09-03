@@ -216,15 +216,6 @@ nav li a:hover,
   align-items: center;
 }
 
-.interactive .slideContainer .right-arrow {
-  right: -4px;
-  z-index: 5;
-}
-.interactive .slideContainer .left-arrow {
-  left: -4px;
-  z-index: 5;
-}
-
 /* sliding-gallery display */
 .navRight {
   opacity: 0.8;
@@ -446,6 +437,7 @@ nav li a:hover,
 .main-body .gallery {
   height: 100%;
   max-width: 100vw;
+  width: 65%;
   margin: auto;
   display: inline-grid;
   grid-template-columns: repeat(auto-fit, 1fr);
@@ -670,13 +662,6 @@ footer .estimate img {
 }
 
 @media screen and (max-width: 660px) {
-  .interactive .slideContainer .right-arrow {
-    right: 1px;
-  }
-  .interactive .slideContainer .left-arrow {
-    left: 1px;
-  }
-
   .main-head {
     position: relative;
   }
@@ -751,40 +736,6 @@ footer .estimate img {
   .pallet ul {
     grid-template-columns: repeat(3, 30vw);
   }
-
-  .main-body {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0%;
-    height: auto;
-    width: 100vw;
-  }
-  .main-body .carousel {
-    animation: autoSlide infinite 20s linear 0s;
-    text-overflow: ellipsis;
-    width: 100%;
-    height: calc(50rem + 1vh);
-  }
-  .main-body .gallery {
-    background: linear-gradient(rgb(92, 92, 191), green);
-    padding: 0rem;
-    margin: 0rem;
-  }
-
-  .main-body .gallery img {
-    padding: 1rem;
-    border-radius: 5rem;
-  }
-
-  @keyframes autoSlide {
-    0% {
-      transform: translate3d(0, 100%, 0);
-    }
-    100% {
-      transform: translate3d(0, -410%, 0);
-    }
-  }
 }
 
 @media screen and (max-width: 780px) {
@@ -811,6 +762,41 @@ footer .estimate img {
 @media screen and (max-width: 900px) {
   .interactive figure {
     padding: 0rem;
+  }
+
+  .main-body {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+    height: auto;
+    width: 100vw;
+  }
+  .main-body .carousel {
+    animation: autoSlide infinite 20s linear 0s;
+    text-overflow: ellipsis;
+    width: 100%;
+    height: calc(50rem + 1vh);
+  }
+  .main-body .gallery {
+    width: 100vw;
+    background: linear-gradient(rgb(92, 92, 191), green);
+    padding: 0rem;
+    margin: 0rem;
+  }
+
+  .main-body .gallery img {
+    padding: 1rem;
+    border-radius: 5rem;
+  }
+
+  @keyframes autoSlide {
+    0% {
+      transform: translate3d(0, 100%, 0);
+    }
+    100% {
+      transform: translate3d(0, -410%, 0);
+    }
   }
 }
 
