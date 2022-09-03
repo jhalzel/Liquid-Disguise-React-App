@@ -53,25 +53,21 @@
 
 .kGallery .kIntContainer figure {
   height: 100%;
-  padding-bottom: 12%;
+  padding-bottom: 15%;
 }
 
 .kGallery figcaption {
   width: 100%;
   text-align: center;
-  font-size: calc(1rem + 01vw);
+  font-size: calc(1rem + 1vw);
 }
 
-.kDisplay .kGallery .img {
+.kGallery .img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 6rem;
   padding: 2rem;
-}
-
-.kDisplay .kGallery h5 {
-  font-size: x-large;
 }
 
 .kSidewaysList {

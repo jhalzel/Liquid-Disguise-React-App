@@ -1,0 +1,21 @@
+{
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      ".git",
+      "runtimeconfig.json",
+      "firebase-debug.log",
+      "firebase-debug.*log",
+      "node_modules"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
