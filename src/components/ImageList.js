@@ -1,22 +1,8 @@
 import React from "react";
 
-export default function ImgList({ gallery, cName }) {
-  // const handleHover = (e) => {
-  //   console.log(e.target);
-  //   console.log(e.currentTarget.parentNode.parentNode);
-  //   const classList = e.currentTarget.parentNode.parentNode.classList;
-  //   if (!classList.contains("sliding-gallery2")) {
-  //     classList.add("sliding-gallery2");
-  //   }
-  // };
-  // const handleExit = (e) => {
-  //   console.log(e.target);
-  //   console.log(e.currentTarget.parentNode.parentNode);
-  //   const classList = e.currentTarget.parentNode.parentNode.classList;
-  // onMouseOver={(e) => handleHover(e)}
-  //   classList.toggle("sliding-gallery2");
-  // };
+import { GiMagnifyingGlass } from "react-icons/gi";
 
+export default function ImgList({ gallery, cName }) {
   return (
     <>
       <ul>
