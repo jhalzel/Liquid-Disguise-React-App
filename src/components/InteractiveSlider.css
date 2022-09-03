@@ -23,6 +23,7 @@
   cursor: url("/public/assets/black&colored_cursor.png"), auto;
   user-select: none;
   padding: 0rem;
+  margin-right: 0%;
 }
 .left-arrow {
   position: absolute;
@@ -90,7 +91,7 @@
     z-index: 5;
   }
   .right-arrow {
-    right: -4px;
+    right: -10px;
     z-index: 5;
   }
   .slider {

@@ -37,8 +37,9 @@
 nav {
   display: flex;
   width: 95%;
+  max-width: 100vw;
   min-height: 5vh;
-  padding: 2rem;
+  padding: 1rem;
   margin: auto;
   align-items: center;
   flex-wrap: wrap;
@@ -209,6 +210,13 @@ nav li a:hover,
   align-items: center;
 }
 
+.interactive .slideContainer .right-arrow {
+  right: 1px;
+}
+.interactive .slideContainer .left-arrow {
+  left: 1px;
+}
+
 /* sliding-gallery display */
 .navRight {
   opacity: 0.8;
@@ -245,14 +253,15 @@ nav li a:hover,
   min-height: 63vh;
   overflow-x: scroll;
   overflow-y: hidden;
-  width: 100%;
+  max-width: 100vw;
 }
 
 .sliding-gallery ul {
   display: flex;
-  padding: 1em 1.5em;
+  padding: 0em 0em;
   position: absolute;
   height: 100%;
+  max-width: 100vw;
   width: auto;
   scrollbar-track-color: transparent;
   scrollbar-width: none;
@@ -265,7 +274,6 @@ nav li a:hover,
 .sliding-gallery li div {
   height: 100%;
   width: clamp(45rem, 40vw, 60rem);
-  padding: 0.5rem;
   transition: 1s;
 }
 
@@ -274,7 +282,9 @@ nav li a:hover,
   border-radius: 1.5rem;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
   position: relative;
+  padding: 0rem;
 }
 .sliding-gallery li:hover,
 .sliding-gallery li:hover div,
@@ -283,6 +293,7 @@ nav li a:hover,
   cursor: url(data:image/svg+xml,%3Csvg%20stroke%3D%22currentColor%22%20fill%3D%22currentColor%22%20stroke-width%3D%220%22%20viewBox%3D%220%200%2024%2024%22%20ariaHidden%3D%22true%22%20height%3D%223em%22%20width%3D%223em%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M10.5%203.75a6.75%206.75%200%20100%2013.5%206.75%206.75%200%20000-13.5zM2.25%2010.5a8.25%208.25%200%201114.59%205.28l4.69%204.69a.75.75%200%2011-1.06%201.06l-4.69-4.69A8.25%208.25%200%20012.25%2010.5zm8.25-3.75a.75.75%200%2001.75.75v2.25h2.25a.75.75%200%20010%201.5h-2.25v2.25a.75.75%200%2001-1.5%200v-2.25H7.5a.75.75%200%20010-1.5h2.25V7.5a.75.75%200%2001.75-.75z%22%20clip-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E),
     auto;
   z-index: 9;
+  padding: 0rem;
   transform: scale(1.03, 1.03);
 }
 
@@ -732,7 +743,7 @@ footer .estimate img {
   .main-body .carousel {
     animation: autoSlide infinite 20s linear 0s;
     text-overflow: ellipsis;
-    width: 100vw;
+    width: 100%;
     height: calc(50rem + 1vh);
   }
   .main-body .gallery {
