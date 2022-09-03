@@ -217,10 +217,12 @@ nav li a:hover,
 }
 
 .interactive .slideContainer .right-arrow {
-  right: 1px;
+  right: -4px;
+  z-index: 5;
 }
 .interactive .slideContainer .left-arrow {
-  left: 1px;
+  left: -4px;
+  z-index: 5;
 }
 
 /* sliding-gallery display */
@@ -668,6 +670,13 @@ footer .estimate img {
 }
 
 @media screen and (max-width: 660px) {
+  .interactive .slideContainer .right-arrow {
+    right: 1px;
+  }
+  .interactive .slideContainer .left-arrow {
+    left: 1px;
+  }
+
   .main-head {
     position: relative;
   }
