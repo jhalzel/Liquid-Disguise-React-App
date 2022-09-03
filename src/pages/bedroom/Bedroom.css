@@ -2,7 +2,8 @@
   height: auto;
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, clamp(25rem, 100vw, 44rem));
+  grid-template-columns: repeat(auto-fit, clamp(25rem, 100vw, 80rem));
+  grid-template-rows: max(70vh);
   background: linear-gradient(rgba(92, 92, 191, 0.3), green);
   padding: 1rem;
   max-width: 100%;
@@ -44,9 +45,6 @@
   border-radius: 30px;
   transition: all 0.4s linear;
   color: rgb(188, 205, 2);
-}
-
-@media screen and (max-width: 520px) {
 }
 
 @media screen and (max-width: 600px) {
