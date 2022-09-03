@@ -53,13 +53,13 @@
 
 .kGallery .kIntContainer figure {
   height: 100%;
-  padding-bottom: 15%;
+  padding-bottom: 20%;
 }
 
 .kGallery figcaption {
   width: 100%;
   text-align: center;
-  font-size: calc(1rem + 1vw);
+  font-size: calc(2rem + 0.4vw);
 }
 
 .kGallery .img {
