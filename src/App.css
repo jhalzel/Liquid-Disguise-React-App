@@ -5,6 +5,12 @@
   z-index: 11;
 }
 
+.contactButton {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 #logo {
   display: flex;
   flex-direction: row;
@@ -716,6 +722,11 @@ footer .estimate img {
   }
   .main-head {
     position: relative;
+  }
+  .contactButton {
+    color: black;
+    text-decoration: none;
+    cursor: auto;
   }
 }
 

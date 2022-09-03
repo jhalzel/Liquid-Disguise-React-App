@@ -43,11 +43,7 @@ function App() {
   //contact button
   const contact = (
     <span
-      style={{
-        color: "blue",
-        cursor: "pointer",
-        textDecoration: "underline",
-      }}
+      className='contactButton'
       onMouseOver={(e) => (e.currentTarget.style.color = "limegreen")}
       onMouseLeave={(e) => (e.currentTarget.style.color = "blue")}
       onClick={() => {
