@@ -62,12 +62,19 @@
 .busCarousel2 ul {
   margin: 0;
 }
-.busCarousel li,
-.busCarousel2 li {
+.busCarousel li {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 12rem;
+  margin: 0mm;
+}
+
+.busCarousel2 li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 13rem;
   margin: 0mm;
 }
 
@@ -85,7 +92,7 @@
 }
 
 .busCarousel2 {
-  animation: bScroll2 infinite 18s linear;
+  animation: bScroll2 infinite 20s linear;
 }
 
 @keyframes bScroll2 {
@@ -256,7 +263,7 @@
     animation: bScroll infinite 17s linear;
   }
   .busCarousel2 {
-    animation: bScroll2 infinite 21s linear;
+    animation: bScroll2 infinite 25s linear;
   }
 
   .bus-main-body {

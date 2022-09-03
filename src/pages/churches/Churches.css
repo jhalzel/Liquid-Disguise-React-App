@@ -98,8 +98,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 12rem;
-
+  height: 26rem;
   margin: 0mm;
 }
 
@@ -109,7 +108,7 @@
 
 @keyframes churchGlide {
   0% {
-    transform: translate3d(0, 48%, 0);
+    transform: translate3d(0, 18%, 0);
   }
   100% {
     transform: translate3d(0, -100%, 0);
@@ -227,6 +226,9 @@
   .churchCarousel {
     animation: churchGlide infinite 19s linear;
     height: calc(45rem + 1vh);
+  }
+  .churchCarousel li {
+    height: 13rem;
   }
 
   .main-body {

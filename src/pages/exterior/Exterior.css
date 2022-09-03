@@ -117,15 +117,16 @@
   text-align: center;
 }
 
-.slideWrapper figure:hover {
-  cursor: url("/public/assets/black&colored_cursor.png"), auto;
+.extBottom2 .slideWrapper figure:hover {
   background-color: #3f6783;
   color: limegreen;
   border-radius: 30px;
   padding: 1rem;
   transition: all 0.5s linear;
+  cursor: url(data:image/svg+xml,%3Csvg%20stroke%3D%22currentColor%22%20fill%3D%22currentColor%22%20stroke-width%3D%220%22%20viewBox%3D%220%200%2024%2024%22%20ariaHidden%3D%22true%22%20height%3D%222.5em%22%20width%3D%222.5em%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M10.5%203.75a6.75%206.75%200%20100%2013.5%206.75%206.75%200%20000-13.5zM2.25%2010.5a8.25%208.25%200%201114.59%205.28l4.69%204.69a.75.75%200%2011-1.06%201.06l-4.69-4.69A8.25%208.25%200%20012.25%2010.5zm8.25-3.75a.75.75%200%2001.75.75v2.25h2.25a.75.75%200%20010%201.5h-2.25v2.25a.75.75%200%2001-1.5%200v-2.25H7.5a.75.75%200%20010-1.5h2.25V7.5a.75.75%200%2001.75-.75z%22%20clip-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E),
+    auto;
 }
-.slideWrapper figure:hover figcaption {
+.extBottom2 .slideWrapper figure:hover figcaption {
   padding: 1rem;
   background-color: #3f6783;
   transition: all 0.5s linear;
@@ -139,7 +140,6 @@
 
 .extWrapper:hover {
   color: rgb(188, 205, 2);
-  cursor: url("/public/assets/black&colored_cursor.png"), auto;
   transition: background 1s ease-in-out;
   background: #3f6783;
 }
