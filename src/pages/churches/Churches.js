@@ -59,12 +59,14 @@ export default function Churches({
   );
 
   const list = [
-    "Water, mold, mildew, smoke and fire damaged walls",
+    "Water, mold, mildew",
+    "smoke fire damaged walls",
     "Ceilings and cabinetry repaired",
     "Icons painted and refurbished",
     "Guilding",
     "Liturgical artwork and murals",
-    "Restoration/repainting: nativity sets and stations of the cross",
+    "Restoration/repainting",
+    "nativity sets and stations of the cross",
     "Marblizing",
     "Granitizing",
     "Faux bois (wood grain simulation)",
@@ -137,31 +139,31 @@ export default function Churches({
       />
       {/* lower mural */}
       {
-        <div className="lowerSection">
-          <section className="churchMural">
+        <div className='lowerSection'>
+          <section className='churchMural'>
             <div>
-              <img src={waterDamage[0]} alt="image1" />
+              <img src={waterDamage[0]} alt='image1' />
               <h5>{fig1}</h5>
             </div>
             <div>
-              <img src={waterDamage[1]} alt="image2" />
+              <img src={waterDamage[1]} alt='image2' />
               <h5>{fig2}</h5>
             </div>
           </section>
         </div>
       }
       {
-        <section className="satisfied">
+        <section className='satisfied'>
           <Subheaders
             sub1={""}
             sub2={
               "Some of the churches and synagogues that have utilized Liquid Disguise's expertise include: "
             }
           />
-          <div className="churchSideways">
+          <div className='churchSideways'>
             <FloatingList list={satList} />
           </div>
-          <div className="churchSideways2">
+          <div className='churchSideways2'>
             <FloatingList list={satList2} />
           </div>
         </section>

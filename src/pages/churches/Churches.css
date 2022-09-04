@@ -88,32 +88,35 @@
 
 .churchCarousel {
   margin: auto;
-  max-width: 100%;
+  max-width: 100vw;
+  height: calc(45rem + 1vh);
+  max-height: 90vh;
 }
 
 .churchCarousel ul {
-  margin: 0;
-  width: 100%;
-}
-.churchCarousel li {
-  max-width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 26rem;
+  margin: 0;
+  max-width: 100vw;
+}
+.churchCarousel li {
+  max-width: 100vw;
+  height: 16rem;
   margin: 0mm;
 }
 
 .churchCarousel {
-  animation: churchGlide infinite 27s linear;
+  animation: churchGlide infinite 28s linear;
 }
 
 @keyframes churchGlide {
   0% {
-    transform: translate3d(0, 18%, 0);
+    transform: translate3d(0, 120%, 0);
   }
   100% {
-    transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -515%, 0);
   }
 }
 
@@ -226,11 +229,11 @@
   }
 
   .churchCarousel {
-    animation: churchGlide infinite 19s linear;
+    animation: churchGlide infinite 28s linear;
     height: calc(45rem + 1vh);
   }
   .churchCarousel li {
-    height: 13rem;
+    height: 14rem;
   }
 
   .main-body {
@@ -242,7 +245,7 @@
       transform: translate3d(0, 100%, 0);
     }
     100% {
-      transform: translate3d(0, -350%, 0);
+      transform: translate3d(0, -425%, 0);
     }
   }
 
