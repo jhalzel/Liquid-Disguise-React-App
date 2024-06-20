@@ -11,7 +11,7 @@ import Modal from "./components/Modal";
 //pages
 import BusinessOffice from "./pages/business/Business";
 import Home from "./pages/home/Home";
-import Contact from "./pages/contact/Contact";
+import Contact from "./pages/Contact/Contact";
 import Signs from "./pages/signs/Signs";
 import Churches from "./pages/churches/Churches";
 import Exteriors from "./pages/exterior/Exterior";
@@ -220,6 +220,7 @@ function App() {
         }
       }
     });
+  
 
     // get the "alt" attribute of the pallet
     let currentImg = color.toString();
