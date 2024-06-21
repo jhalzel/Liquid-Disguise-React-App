@@ -183,9 +183,6 @@ nav li a:hover,
   justify-content: center;
   align-items: center;
 }
-.interactive figure {
-  height: 100%;
-}
 
 .interactive figure figcaption {
   display: flex;
@@ -204,8 +201,13 @@ nav li a:hover,
 }
 
 .interactive .slideContainer {
-  height: 100%;
+  height: 60rem;
   width: clamp(40rem, 100vw, 65rem);
+}
+
+.interactive .slideContainer img {
+  height: 45rem;
+  width: fit-content;
 }
 
 .interactive .slideContainer figure {
