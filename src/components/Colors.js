@@ -100,51 +100,65 @@
 // }
 
 
+import { set } from "firebase/database";
 import React, { useState } from "react";
 import { HiOutlineArrowSmUp } from "react-icons/hi";
 
-export default function Colors({ handleClick, paintbrushes, colors }) {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const hoverNote = "Click to change backgrounds!";
+export default function Colors({ handleClick, paintbrushes, colors, setBack }) {
+  const [hover, setHover] = useState(true);
+  const [currentPallet, setCurrentPallet] = useState(null);
+  const [lastClickedColor, setLastClickedColor] = useState(null);
+  const hoverNote = "Change Background Colors!";
 
-  const handleHover = (e) => {
-    //current pallet
-    let curPal = e.currentTarget;
-
-    // pallet's background image
+  // Modified handleClick to update lastClickedColor
+  const modifiedHandleClick = (e) => {
+    handleClick(e); // Call the original handleClick function
+    // Update lastClickedColor with the current color
     let color = e.target.attributes[2].nodeValue;
+    setLastClickedColor(color);
+  };
 
-    // set background image/color
-    // setBack(color.toString());
+    // Temporary background change on hover
+  const handleHover = (e) => {
+    console.log("current background: ", currentPallet);
+    console.log('e.currentTarget', e.currentTarget);
+    // Current pallet
+    setCurrentPallet(e.currentTarget);
+    // Pallet's background image
+    let color = e.target.attributes[2].nodeValue;
+    // Add invert class to pallets for effect
+    // Temporarily set background image/color
+    setBack(color); // This temporarily changes the background
   };
 
   const handleHoverOut = () => {
-    // set background image/color to default
-    setHoveredIndex(null);
+    // Revert background image/color to default or previous state
+    // You need to have a default or previous background color stored to revert to it
+    // For demonstration, let's assume 'defaultColor' is your default background color
+    setBack(lastClickedColor); // Revert to default or previous background color
+    setHover(false);
   };
-
 
   return (
     <section className="colors">
-      <h2 id="subtitle">Custom Decorative Painting of New England</h2>
+      {/* <h3 id="subtitle">Custom Decorative Painting of New England</h3> */}
       <div className="pallet">
-        {hoveredIndex !== null && (
-          <span className="note">
-            <p>
-              <HiOutlineArrowSmUp className="arrow" />{" "}
-              {hoverNote}{" "}
-              <HiOutlineArrowSmUp className="arrow" />
-            </p>
-          </span>
-        )}
+      {hover && (
+            <span className='note'>
+              <p>
+                <HiOutlineArrowSmUp className='arrow' /> {hoverNote}
+                <HiOutlineArrowSmUp className='arrow' />
+              </p>
+            </span>
+          )}
         <ul className="pals">
           {paintbrushes.map((paintbrushUrl, index) => (
             <li key={index} className={`pallet${index + 1}`}>
               <img
-                onMouseOver={handleClick}
-                // onMouseOut={handleHoverOut}
+                onMouseOver={(e) => { handleHover(e); setHover(true); }}
+                onMouseOut={handleHoverOut}
                 onBlur={handleHoverOut}
-                onClick={handleClick}
+                onClick={modifiedHandleClick}
                 src={paintbrushUrl}
                 alt={colors[index]}
                 itemProp={colors[index]}
