@@ -241,6 +241,7 @@ function App() {
             <div id='logo'>
               <div>
                 <h1>Liquid-Disguise</h1>
+                <h6>Custom Decorative Painting of New England</h6>
                 <h4>{page}</h4>
               </div>
             </div>

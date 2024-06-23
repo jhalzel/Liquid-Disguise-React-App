@@ -16,7 +16,7 @@
   flex-direction: row;
   align-items: flex-start;
   flex-wrap: wrap;
-  flex: 5 4 50rem;
+  /* flex: 5 4 50rem; */
   font-size: calc(3rem + 0.5vw);
   color: limegreen;
   text-shadow: 0.5px 0.5px 1px rgb(92, 92, 191);
@@ -28,6 +28,11 @@
   font-size: calc(1.5rem + 0.5vw);
   text-shadow: 0.5px 0.5px 1px rgb(92, 92, 191);
 }
+#logo h6 {
+  display: flex;
+  flex-direction: left;
+}
+
 #logo h4 {
   justify-self: center;
 }
@@ -331,7 +336,7 @@ nav li a:hover,
   height: 0%;
 }
 .note p {
-  color: limegreen;
+  color: yellow;
   font-size: calc(2rem + 0.5vh);
   font-weight: 900;
   text-shadow: 1px 1px 2px #3f6783;
@@ -807,7 +812,7 @@ footer .estimate img {
   .note p {
     display: none;
   }
-  .colors::after {
+  /* .colors::after {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -817,7 +822,7 @@ footer .estimate img {
     font-size: calc(1.5em + 2vw);
     color: limegreen;
     text-shadow: 2px 2px 2px #3f6783;
-  }
+  } */
 }
 
 @media screen and (max-width: 1293px) {

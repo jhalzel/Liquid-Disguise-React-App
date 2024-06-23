@@ -118,6 +118,7 @@ export default function Home({
       {/* color Pallets */}
       {
         <Colors
+          setBack={setBack}
           handleClick={handleClick}
           colors={colors}
           paintbrushes={paintbrushes}
