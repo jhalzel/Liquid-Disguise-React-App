@@ -72,6 +72,7 @@ export default function Signs({
         handleClick={handleClick}
         colors={backgrounds}
         paintbrushes={paintbrushes}
+        setBack={setBack}
       />
 
       <Subheaders

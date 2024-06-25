@@ -94,6 +94,7 @@ export default function Business_Office({
         handleClick={handleClick}
         colors={backgrounds}
         paintbrushes={pallets}
+        setBack={setBack}
       />
       {/* subheaders */}
       <Subheaders

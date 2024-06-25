@@ -13,6 +13,7 @@ import Closer from "../../components/Closer";
 import Footer from "../../components/Footer";
 import InteractiveSlider from "../../components/InteractiveSlider";
 import { SliderData1 } from "./kitchenSlideData1";
+import { set } from "firebase/database";
 
 export default function Kitchen({
   importAll,
@@ -95,6 +96,7 @@ export default function Kitchen({
         colors={backgrounds}
         paintbrushes={pallets}
         handleClick={handleClick}
+        setBack={setBack}
       />
       <Subheaders
         sub1={

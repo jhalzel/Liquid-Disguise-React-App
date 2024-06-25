@@ -76,6 +76,7 @@ export default function Bedrooms({
         handleClick={handleClick}
         paintbrushes={pallets}
         colors={backgrounds}
+        setBack={setBack}
       />
       {/* subheaders */}
       <Subheaders

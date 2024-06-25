@@ -95,6 +95,7 @@ export default function Exteriors({
         handleClick={handleClick}
         paintbrushes={paintbrushes}
         colors={backgrounds}
+        setBack={setBack}
       />
       {/* subheaders */}
       <Subheaders

@@ -120,6 +120,7 @@ export default function Churches({
         handleClick={handleClick}
         paintbrushes={paintbrushes}
         colors={colors}
+        setBack={setBack}
       />
       <Subheaders
         sub1={

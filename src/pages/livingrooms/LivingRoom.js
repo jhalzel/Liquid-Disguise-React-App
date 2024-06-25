@@ -11,6 +11,7 @@ import Subheaders from "../../components/Subheaders";
 import Display from "../../components/Display";
 import Closer from "../../components/Closer";
 import Footer from "../../components/Footer";
+import { set } from "firebase/database";
 
 export default function LivingRooms({
   importAll,
@@ -124,6 +125,7 @@ export default function LivingRooms({
         handleClick={handleClick}
         paintbrushes={pallets}
         colors={colors}
+        setBack={setBack}
       />
       {
         <Subheaders
