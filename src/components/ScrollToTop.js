@@ -11,9 +11,9 @@ export default function ScrollToTop({ linkClick, setfalse }) {
         left: 0,
         behavior: "smooth",
       });
-    } else if (linkClick === false && pathname !== "/contact/") {
-      console.log(pathname);
-      setTimeout(() => {
+      } else if (!linkClick || (pathname === "/contact" && pathname.hash === "#about")) {
+    console.log(pathname);
+  setTimeout(() => {
         window.scrollTo({
           top: 0,
           left: 0,

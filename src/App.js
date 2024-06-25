@@ -40,44 +40,29 @@ function App() {
   // link-click function
   const setfalse = () => setLinkClick(false);
 
-  //contact button
-  const contact = (
-    <span
-      className='contactButton'
-      onMouseOver={(e) => (e.currentTarget.style.color = "limegreen")}
-      onMouseLeave={(e) => (e.currentTarget.style.color = "blue")}
-      onClick={() => {
-        var cont = document.getElementsByClassName("contact-com-wrapper")[0];
-        var letters = document.getElementsByClassName("contact")[0];
-        if (
-          !cont.classList.contains("contact-com-wrapper2") &&
-          !letters.classList.contains("contact2")
-        ) {
-          cont.classList.add("contact-com-wrapper2");
-          letters.classList.add("contact2");
-        }
-        setTimeout(() => {
-          cont.classList.remove("contact-com-wrapper2");
-          letters.classList.remove("contact2");
-          // console.log("animation done");
-        }, 2000);
-      }}
+  //link for contact animation
+  const lin = (
+    <Link
+    to={"/contact/"}
+    onMouseOver={(e) => (e.currentTarget.style.color = "limegreen")}
+    onMouseLeave={(e) => (e.currentTarget.style.color = "blue")}
+    onClick={() => setLinkClick(false)}
     >
-      contact
-    </span>
+      Contact
+    </Link>
   );
 
   //subheader on each page
   const sub1 = (
     <>
       {" "}
-      {contact} Gary Halzel for a no-obligation free estimate, call{" "}
+      {lin} Gary Halzel for a no-obligation free estimate, call{" "}
+      {" "}
       <a
         onMouseOver={(e) => (e.currentTarget.style.color = "limegreen")}
         onMouseLeave={(e) => (e.currentTarget.style.color = "blue")}
-        href='tel: 7742391074'
+        href='tel:774-239-1074'
       >
-        {" "}
         774-239-1074
       </a>
       . References are available. All work is backed by Liquid Disguise's
@@ -505,6 +490,7 @@ function App() {
               />
             }
           />
+          <Route exact path='contact/#contact' element={<Contact />} />
           <Route exact path='contact/#about' element={<About />} />
         </Routes>
       </BrowserRouter>
