@@ -747,6 +747,17 @@ footer .estimate img {
 }
 
 @media screen and (max-width: 780px) {
+
+  .interactive figure {
+    height: fit-content;
+    width: 100%;
+  }
+
+  .interactive .slideContainer img {
+    padding: 0rem;
+    height: fit-content;
+    width: 80%;
+  }
   .contact {
     padding: 0rem;
   }
@@ -768,10 +779,7 @@ footer .estimate img {
   }
 }
 @media screen and (max-width: 900px) {
-  .interactive figure {
-    padding: 0rem;
-  }
-
+  
   .main-body {
     flex-direction: column;
     justify-content: center;

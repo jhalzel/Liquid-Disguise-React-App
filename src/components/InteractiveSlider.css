@@ -85,16 +85,26 @@
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 840px) {
   .left-arrow {
+    position: absolute;
     left: 1px;
     z-index: 5;
   }
   .right-arrow {
+    position: absolute;
     right: 1px;
     z-index: 5;
   }
   .slider {
-    width: 100%;
+    width: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .img {
+    height: 80%;
+    width: auto;
+    border-radius: 40px;
   }
 }
