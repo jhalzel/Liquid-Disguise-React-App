@@ -143,11 +143,11 @@ export default function Churches({
         <div className='lowerSection'>
           <section className='churchMural'>
             <div>
-              <img src={waterDamage[0]} alt='image1' />
+              <img src={waterDamage[1]} alt='image1' />
               <h5>{fig1}</h5>
             </div>
             <div>
-              <img src={waterDamage[1]} alt='image2' />
+              <img src={waterDamage[0]} alt='image2' />
               <h5>{fig2}</h5>
             </div>
           </section>

@@ -43,10 +43,10 @@ function App() {
   //link for contact animation
   const lin = (
     <Link
-    to={"/contact/"}
+    to={"/contact/#contact"}
     onMouseOver={(e) => (e.currentTarget.style.color = "limegreen")}
     onMouseLeave={(e) => (e.currentTarget.style.color = "blue")}
-    onClick={() => setLinkClick(false)}
+    onClick={() => setLinkClick(true)}
     >
       Contact
     </Link>

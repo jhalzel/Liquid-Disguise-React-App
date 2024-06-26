@@ -1,30 +1,32 @@
-import { useLocation } from "react-router-dom";
+import {  useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 export default function ScrollToTop({ linkClick, setfalse }) {
-  const { pathname } = useLocation();
+  let location = useLocation();
 
   useEffect(() => {
-    if (linkClick === true) {
+
+    console.log('location.pathname:', location.pathname);
+    console.log('location.hash:', location.hash);
+    console.log('linkClick:', linkClick);
+
+
+    if (linkClick && location.hash === '#about') {
       window.scrollTo({
-        top: 990,
+        top: 1230,
         left: 0,
         behavior: "smooth",
       });
-      } else if (!linkClick || (pathname === "/contact" && pathname.hash === "#about")) {
-    console.log(pathname);
-  setTimeout(() => {
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: "smooth",
-        });
-      }, 1);
-    }
-  }, [pathname, linkClick]);
 
-  //setting Link-click false in App.js
-  setfalse();
-
+      } else {
+      setTimeout(() => {
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            });
+          }, 1);
+        }
+      }, [linkClick, location]);
   return;
 }
