@@ -1,7 +1,7 @@
 Painting Company Portfolio Web-Application
 ------------------------------------------
 
-This web-application is designed to showcase a painting company's many pieces of art and jobs on several different categories of work, such as Churches, outdoor, interior faux finishing, etc. The website has decorative elements to it such as lists of worked with entities that are on an infinite carousel,  React window sliders, and changing background colors. Here's the website: https://liquid-disguise-eabf8.web.app
+This web-application is designed to showcase a painting company's many pieces of art and jobs on several different categories of work, such as Churches, outdoor, interior faux finishing, etc. The website has decorative elements to it such as lists of worked with entities that are on an infinite carousel,  React window sliders, and changing background colors. Here's the website: https://www.liquiddisguise.com
 
 
 Technologies Used
