@@ -61,7 +61,7 @@ function App() {
       <a
         onMouseOver={(e) => (e.currentTarget.style.color = "limegreen")}
         onMouseLeave={(e) => (e.currentTarget.style.color = "blue")}
-        href='tel:774-239-1074'
+        href='tel:7742391074'
       >
         774-239-1074
       </a>
