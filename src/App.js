@@ -27,6 +27,7 @@ function App() {
   const [linkClick, setLinkClick] = useState(false);
   const [page, setPage] = useState(""); //Subtitle
   const [back, setBack] = useState(""); //background color
+  const [contactClassName, setContactClassName] = useState('contact')
 
   //import images from folder function
   const importAll = (r) => {
@@ -70,59 +71,7 @@ function App() {
     </>
   );
 
-  //smooth menu handling
-  const handleMenu = (e) => {
-    if (e.currentTarget.className === "home") {
-      let r = document.getElementsByClassName("residential");
-      r[0].parentElement.classList.remove("com-wrapper2");
-
-      let d = document.getElementsByClassName("commercial");
-      d[0].parentElement.classList.remove("com-wrapper2");
-
-      let c = document.getElementsByClassName("contact");
-      c[0].parentElement.classList.remove("com-wrapper2");
-    }
-  };
-
-  //toggle menu on page change
-  const handleMenubar = (e) => {
-    var cur = e.currentTarget.parentElement;
-
-    if (!cur.classList.contains("com-wrapper2")) {
-      cur.classList.add("com-wrapper2");
-      if (e.currentTarget.className === "commercial") {
-        let r = document.getElementsByClassName("residential");
-        r[0].parentElement.classList.remove("com-wrapper2");
-        let c = document.getElementsByClassName("contact");
-        c[0].parentElement.classList.remove("com-wrapper2");
-      }
-      if (e.currentTarget.className === "residential") {
-        let d = document.getElementsByClassName("commercial");
-        d[0].parentElement.classList.remove("com-wrapper2");
-        let c = document.getElementsByClassName("contact");
-        c[0].parentElement.classList.remove("com-wrapper2");
-      }
-      if (e.currentTarget.className === "contact") {
-        let d = document.getElementsByClassName("commercial");
-        d[0].parentElement.classList.remove("com-wrapper2");
-        let r = document.getElementsByClassName("residential");
-        r[0].parentElement.classList.remove("com-wrapper2");
-      }
-    } else {
-      cur.classList.toggle("com-wrapper2");
-    }
-  };
-
-  //drop-down menu on click
-  const handleMenubar2 = (e) => {
-    //toggle menu on page change
-    var cur = e.currentTarget.parentElement.parentElement.parentElement;
-    if (!cur.classList.contains("com-wrapper2")) {
-      cur.classList.add("com-wrapper2");
-    } else {
-      cur.classList.toggle("com-wrapper2");
-    }
-  };
+  
 
   // (active) pallets array
   const pallets = [
@@ -184,6 +133,11 @@ function App() {
       });
     }
   }, [back, subtitle, darkBackgrounds]);
+    
+  // handle Contact menu click
+  const handleContactClick = () => {
+    setContactClassName('com-wrapper')
+  }
 
   // changing backgrounds handle
   const handleClick = (e) => {
@@ -231,47 +185,26 @@ function App() {
               </div>
             </div>
             <ul>
-              <li className='home' onClick={(e) => handleMenu(e)}>
+              <li className='home' >
                 <Link to='/'>Home</Link>
               </li>
               <li>
                 <div className='com-wrapper'>
-                  <span
-                    className='commercial'
-                    onClick={(e) => {
-                      handleMenubar(e);
-                    }}
-                  >
+                  <span className='commercial'>
                     Commercial
                   </span>
                   <div className='com-menu'>
                     <ul className='holder'>
-                      <li
-                        onClick={(e) => {
-                          handleMenubar2(e);
-                        }}
-                      >
+                      <li>
                         <Link to='/business'>Business & Office</Link>
                       </li>
-                      <li
-                        onClick={(e) => {
-                          handleMenubar2(e);
-                        }}
-                      >
+                      <li>
                         <Link to='/churchesAndTemples'>Churches & Temples</Link>
                       </li>
-                      <li
-                        onClick={(e) => {
-                          handleMenubar2(e);
-                        }}
-                      >
+                      <li>
                         <Link to='/signs'>Signs</Link>
                       </li>
-                      <li
-                        onClick={(e) => {
-                          handleMenubar2(e);
-                        }}
-                      >
+                      <li>
                         <Link to='/exteriors'>Exteriors</Link>
                       </li>
                     </ul>
@@ -282,44 +215,28 @@ function App() {
                 <div className='com-wrapper'>
                   <span
                     className='residential'
-                    onClick={(e) => handleMenubar(e)}
                   >
                     Residential
                   </span>
                   <div className='com-menu'>
                     <ul className='holder'>
                       <li
-                        onClick={(e) => {
-                          handleMenubar2(e);
-                        }}
                       >
                         <Link to='/kitchenAndDining'>Kitchens & Dining</Link>
                       </li>
                       <li
-                        onClick={(e) => {
-                          handleMenubar2(e);
-                        }}
                       >
                         <Link to='/livingRooms'>Living Rooms</Link>
                       </li>
                       <li
-                        onClick={(e) => {
-                          handleMenubar2(e);
-                        }}
                       >
                         <Link to='/bedrooms'>Bedrooms</Link>
                       </li>
                       <li
-                        onClick={(e) => {
-                          handleMenubar2(e);
-                        }}
                       >
                         <Link to='/bathrooms'>Bathrooms</Link>
                       </li>
                       <li
-                        onClick={(e) => {
-                          handleMenubar2(e);
-                        }}
                       >
                         <Link to='/woodwork'>Woodwork</Link>
                       </li>
@@ -328,22 +245,18 @@ function App() {
                 </div>
               </li>
               <li>
-                <div className='contact-com-wrapper'>
-                  <span className='contact' onClick={(e) => handleMenubar(e)}>
+                <div className='com-wrapper'>
+                  <span className='contact'>
                     Contact
                   </span>
                   <div className='com-menu'>
                     <ul className='holder'>
                       <li
-                        onClick={(e) => {
-                          handleMenubar2(e);
-                        }}
                       >
                         <Link to='contact'>Contact</Link>
                       </li>
                       <li
                         onClick={(e) => {
-                          handleMenubar2(e);
                           setLinkClick(true);
                         }}
                       >
@@ -485,7 +398,7 @@ function App() {
               <Contact
                 setBack={setBack}
                 setPage={setPage}
-                handleClick={handleClick}
+                handleClick={handleContactClick}
                 modal={<Modal />}
               />
             }
